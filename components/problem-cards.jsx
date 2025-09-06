@@ -89,7 +89,7 @@ export default function ProblemCards() {
               <span className="font-body-semibold text-red-600">Growth Challenges</span>
             </div>
             <h2 className="font-display-medium  text-black text-5xl md:text-6xl lg:text-7xl mb-8">
-              The Problems That Keep CEOs Up at Night
+              What prevents CXOs from getting a good night's sleep?
             </h2>
             <p className="font-body text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
               These are the exact challenges that stall growth and drain resources.
