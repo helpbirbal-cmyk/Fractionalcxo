@@ -3,9 +3,9 @@ import { motion } from "framer-motion"
 import { ArrowRight, Play, Star, Users, TrendingUp, Sparkles, CheckCircle, Zap } from "lucide-react"
 import Link from 'next/link';
 
-export default function Hero() {
+export default function Hero({ onOpenAudit }) {
   return (
-               <section className="relative overflow-hidden pt-32 pb-24 bg-gradient-dark">
+      <section className="relative overflow-hidden pt-32 pb-24 bg-gradient-dark">
       {/* Premium Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-primary/10 to-blue-500/10 rounded-full blur-3xl animate-pulse" />
@@ -41,7 +41,7 @@ export default function Hero() {
             className="mb-8 inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-green-500/10 px-8 py-4 rounded-2xl border border-primary/20 backdrop-blur-sm"
           >
             <Sparkles className="h-5 w-5 text-primary" />
-            <span className="font-body-semibold text-primary">Trusted by Fortune 500 & Unicorn Companies</span>
+            <span className="font-body-semibold text-primary">Trusted by Fortune 500 & Startups</span>
             <Zap className="h-5 w-5 text-primary" />
           </motion.div>
 
@@ -98,24 +98,22 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20"
           >
-          <button
-            className="btn-cta group"
-            onClick={() => document.getElementById('growth-audit').scrollIntoView({ behavior: 'smooth' })}
-            >
-            <Link href="#growth-audit" className="btn-cta group">
+
+           <button className="btn-cta group"   onClick={onOpenAudit}>
               <div className="flex items-center">
                 Take Free Growth Audit
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
               </div>
-           </Link>
-          </button>
-            <button className="btn-cta group">
+            </button>
+
+            <button className="btn-secondary group">
               <div className="flex items-center">
                 Book Free Strategy Session
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
               </div>
             </button>
-            <button className="btn-secondary group">
+
+            <button className="btn-tertiary group">
               <div className="flex items-center">
                 <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
                 Watch Success Stories

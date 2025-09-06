@@ -1,12 +1,13 @@
-import React from "react"
-import Head from "next/head"
-import Hero from "../components/hero"
-import ProblemCards from "../components/problem-cards"
-import ServicesSection from "../components/services-section"
-import GrowthAudit from "../components/growth-audit" // Import the new component
-
+import React, { useState } from "react";
+import Head from "next/head";
+import Hero from "../components/hero";
+import ProblemCards from "../components/problem-cards";
+import ServicesSection from "../components/services-section";
+import AuditModal from "../components/audit-modal";
 
 export default function Home() {
+  const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
+
   return (
     <>
       <Head>
@@ -14,10 +15,17 @@ export default function Home() {
         <meta name="description" content="Unlock hyper-growth with fractional CGO/CMO/CSO, GTM & international expansion." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Hero />
+
+      {/* Pass the onOpenAudit function as a prop */}
+      <Hero onOpenAudit={() => setIsAuditModalOpen(true)} />
+
       <ProblemCards />
       <ServicesSection />
-      <GrowthAudit  id="growth-audit" /> {/* Add the new component here */}
+
+      <AuditModal
+        isOpen={isAuditModalOpen}
+        onClose={() => setIsAuditModalOpen(false)}
+      />
     </>
-  )
+  );
 }
