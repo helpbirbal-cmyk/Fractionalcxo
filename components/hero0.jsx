@@ -1,7 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { ArrowRight, Play, Star, Users, TrendingUp, Sparkles, CheckCircle, Zap } from "lucide-react"
-import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -98,17 +97,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20"
           >
-          <button
-            className="btn-cta group"
-            onClick={() => document.getElementById('growth-audit').scrollIntoView({ behavior: 'smooth' })}
-            >
-            <Link href="#growth-audit" className="btn-cta group">
+            <button className="btn-cta group">
               <div className="flex items-center">
-                Take Free Growth Audit
+                Free Growth Audit
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
               </div>
-           </Link>
-          </button>
+            </button>
             <button className="btn-cta group">
               <div className="flex items-center">
                 Book Free Strategy Session

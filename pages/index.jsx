@@ -3,6 +3,8 @@ import Head from "next/head"
 import Hero from "../components/hero"
 import ProblemCards from "../components/problem-cards"
 import ServicesSection from "../components/services-section"
+import GrowthAudit from "../components/growth-audit" // Import the new component
+
 
 export default function Home() {
   return (
@@ -15,6 +17,7 @@ export default function Home() {
       <Hero />
       <ProblemCards />
       <ServicesSection />
+      <GrowthAudit  id="growth-audit" /> {/* Add the new component here */}
     </>
   )
 }
