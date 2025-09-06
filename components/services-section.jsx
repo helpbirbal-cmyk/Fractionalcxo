@@ -216,7 +216,7 @@ export default function ServicesSection() {
           })}
         </div>
 
-        {/* Bottom CTA Section */}
+        {/* Bottom CTA Section
         <AnimateIn delay={0.6}>
           <div className="text-center mt-20">
             <div className="card-premium p-12 max-w-4xl mx-auto">
@@ -244,7 +244,7 @@ export default function ServicesSection() {
                 </button>
               </div>
 
-              {/* Trust Indicators */}
+
               <div className="flex items-center justify-center gap-8 mt-10 pt-10 border-t border-slate-200">
                 <div className="flex items-center gap-2 text-slate-500">
                   <CheckCircle className="h-4 w-4 text-primary" />
@@ -261,7 +261,7 @@ export default function ServicesSection() {
               </div>
             </div>
           </div>
-        </AnimateIn>
+        </AnimateIn>  */ }
       </div>
     </section>
   )

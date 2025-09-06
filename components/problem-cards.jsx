@@ -8,7 +8,7 @@ const problems = [
     title: "Sales Plateau",
     description: "Pipeline stalls, long cycles, low close rates.",
     icon: TrendingDown,
-    percentage: "67%",
+    percentage: "75%",
     statText: "of companies struggle with sales growth",
     testimonial: "We increased our close rate from 12% to 34% in 6 months.",
     author: "Sarah Chen, VP Sales at TechFlow",
@@ -44,8 +44,8 @@ const problems = [
     title: "Launch Stumbles",
     description: "Positioning misses; slow adoption post-launch.",
     icon: Target,
-    percentage: "73%",
-    statText: "of product launches fail",
+    percentage: "95%",
+    statText: "of new products miss the mark ",
     testimonial: "We achieved 10x faster market penetration.",
     author: "Lisa Park, Product Lead at InnovateCorp",
     color: "from-blue-500/10 to-blue-600/10",
@@ -139,7 +139,7 @@ export default function ProblemCards() {
         </div>
 
         {/* Bottom CTA Section */}
-        <AnimateIn delay={0.6}>
+      { /**  <AnimateIn delay={0.6}>
           <div className="text-center mt-20">
             <div className="card-premium p-12 max-w-4xl mx-auto">
               <div className="flex items-center justify-center gap-3 mb-6">
@@ -166,7 +166,6 @@ export default function ProblemCards() {
                 </button>
               </div>
 
-              {/* Trust Indicators */}
               <div className="flex items-center justify-center gap-8 mt-10 pt-10 border-t border-slate-200">
                 <div className="flex items-center gap-2 text-slate-500">
                   <CheckCircle className="h-4 w-4 text-primary" />
@@ -183,7 +182,7 @@ export default function ProblemCards() {
               </div>
             </div>
           </div>
-        </AnimateIn>
+        </AnimateIn> **/ }
       </div>
     </section>
   )
