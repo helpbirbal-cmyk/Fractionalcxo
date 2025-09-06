@@ -101,11 +101,11 @@ export default function ServicesSection() {
               <Award className="h-5 w-5 text-primary" />
               <span className="font-body-semibold text-primary">Leadership Services</span>
             </div>
-            <h2 className="font-display-medium text-5xl md:text-6xl lg:text-7xl mb-8">
+            <h2 className="font-display-medium text-black text-5xl md:text-6xl lg:text-7xl mb-8">
               Fractional Leadership
             </h2>
             <p className="font-body text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Get world-class executive leadership on-demand. Our proven leaders have scaled 
+              Get world-class executive leadership on-demand. Our proven leaders have scaled
               companies from startup to unicorn status with measurable results.
             </p>
           </div>
@@ -155,7 +155,7 @@ export default function ServicesSection() {
                           </div>
                         ))}
                       </div>
-                      
+
                       {/* Metrics Grid */}
                       <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-slate-200">
                         <div className="text-center">
@@ -194,14 +194,14 @@ export default function ServicesSection() {
                           <div className="text-xs text-slate-500">Cancel anytime</div>
                         </div>
                       </div>
-                      
+
                       <button className="w-full btn-primary group">
                         <div className="flex items-center justify-center">
                           Get Started
                           <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform" />
                         </div>
                       </button>
-                      
+
                       <button className="w-full btn-tertiary group">
                         <div className="flex items-center justify-center">
                           View Cases
@@ -226,7 +226,7 @@ export default function ServicesSection() {
                 <Zap className="h-8 w-8 text-primary" />
               </div>
               <p className="font-body text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Get a personalized recommendation based on your specific challenges, 
+                Get a personalized recommendation based on your specific challenges,
                 company size, and growth goals. Our experts will create a custom roadmap for your success.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -243,7 +243,7 @@ export default function ServicesSection() {
                   </div>
                 </button>
               </div>
-              
+
               {/* Trust Indicators */}
               <div className="flex items-center justify-center gap-8 mt-10 pt-10 border-t border-slate-200">
                 <div className="flex items-center gap-2 text-slate-500">

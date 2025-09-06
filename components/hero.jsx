@@ -75,19 +75,19 @@ export default function Hero({ onOpenAudit }) {
           >
             <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/20 shadow-lg hover-lift">
               <div className="h-3 w-3 rounded-full bg-primary" />
-              <span className="font-body-semibold text-white">Start in 48 hours</span>
+              <span className="font-body-semibold text-white">Start Today</span>
             </div>
             <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/20 shadow-lg hover-lift">
               <div className="h-3 w-3 rounded-full bg-primary" />
-              <span className="font-body-semibold text-white">No long-term contracts</span>
+              <span className="font-body-semibold text-white">Pay As You Go</span>
             </div>
             <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/20 shadow-lg hover-lift">
               <div className="h-3 w-3 rounded-full bg-primary" />
-              <span className="font-body-semibold text-white">Guaranteed results</span>
+              <span className="font-body-semibold text-white">Outcome Focus</span>
             </div>
             <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/20 shadow-lg hover-lift">
               <div className="h-3 w-3 rounded-full bg-primary" />
-              <span className="font-body-semibold text-white">Proven frameworks</span>
+              <span className="font-body-semibold text-white">Proven</span>
             </div>
           </motion.div>
 

@@ -88,11 +88,11 @@ export default function ProblemCards() {
               <Target className="h-5 w-5 text-red-600" />
               <span className="font-body-semibold text-red-600">Growth Challenges</span>
             </div>
-            <h2 className="font-display-medium text-5xl md:text-6xl lg:text-7xl mb-8">
+            <h2 className="font-display-medium  text-black text-5xl md:text-6xl lg:text-7xl mb-8">
               The Problems That Keep CEOs Up at Night
             </h2>
             <p className="font-body text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              These are the exact challenges that stall growth and drain resources. 
+              These are the exact challenges that stall growth and drain resources.
               We've solved them for hundreds of companies with proven frameworks.
             </p>
           </div>
@@ -117,10 +117,10 @@ export default function ProblemCards() {
                       </div>
                       <CardTitle className="font-display-medium text-2xl mb-3 text-slate-900">{problem.title}</CardTitle>
                     </CardHeader>
-                    
+
                     <CardContent className="space-y-8">
                       <p className="font-body text-slate-600 leading-relaxed">{problem.description}</p>
-                      
+
 
 
                       {/* CTA */}
@@ -148,7 +148,7 @@ export default function ProblemCards() {
                 <Target className="h-8 w-8 text-primary" />
               </div>
               <p className="font-body text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Get a comprehensive growth audit that identifies your specific challenges and creates a 
+                Get a comprehensive growth audit that identifies your specific challenges and creates a
                 personalized roadmap to overcome them. Join hundreds of companies that have transformed their growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -165,7 +165,7 @@ export default function ProblemCards() {
                   </div>
                 </button>
               </div>
-              
+
               {/* Trust Indicators */}
               <div className="flex items-center justify-center gap-8 mt-10 pt-10 border-t border-slate-200">
                 <div className="flex items-center gap-2 text-slate-500">
