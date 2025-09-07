@@ -39,12 +39,13 @@ export default function Nav() {
     }`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Image src="/aberdeenlogo.svg" alt="ABERCXO logo" width={50} height={50} />
 
         <Link href="/" className="flex items-center space-x-2 group">
 
-          <div className="w-8 h-8 bg-gradient-to-br from-primary to-green-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">X</span>
+          <div className="w-12 h-12 bg-gradient-to-br from-primary to-green-500 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-lg">
+              <Image src="/aberdeenlogo.svg"  className="rounded-md" alt="ABERCXO logo" width={50} height={50} />
+            </span>
           </div>
           <span className="font-bold text-xl text-slate-900 group-hover:text-primary transition-colors">
             ABERCXO
