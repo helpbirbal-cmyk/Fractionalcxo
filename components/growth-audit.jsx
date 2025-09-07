@@ -75,7 +75,7 @@ const GrowthAudit = () => {
         />
       </div>
     </div>
-  </div>  
+  </div>
   );
 };
 
