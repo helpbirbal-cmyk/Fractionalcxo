@@ -6,7 +6,6 @@ import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
 
 // Import the default export and access auditQuestions from it
 import auditData from '../data/audit-questions';
-console.log('Default export content:', auditData);
 
 // Use the questions from the default export
 const auditQuestions = auditData?.auditQuestions || [
@@ -30,7 +29,6 @@ const auditQuestions = auditData?.auditQuestions || [
   }
 ];
 
-console.log('Questions to use:', auditQuestions.length);
 
 const AuditModal = ({ isOpen, onClose }) => {
   const {
@@ -45,7 +43,6 @@ const AuditModal = ({ isOpen, onClose }) => {
   useBodyScrollLock(isOpen);
 
   useEffect(() => {
-    console.log('Modal opened with questions:', auditQuestions.length);
   }, [isOpen]);
 
   if (!isOpen) return null;
