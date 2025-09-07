@@ -3,27 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "framer-motion": "6.5.1",
+    "@next/third-parties": "^15.5.2",
     "@radix-ui/react-slot": "1.0.2",
     "class-variance-authority": "0.7.0",
     "clsx": "1.2.1",
+    "framer-motion": "6.5.1",
     "lucide-react": "0.263.1",
+    "next": "^14.2.32",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwind-merge": "1.14.0",
     "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
     "autoprefixer": "10.4.14",
     "eslint": "latest",
-    "eslint-config-next":"latest",
+    "eslint-config-next": "latest",
     "postcss": "8.4.24",
     "tailwindcss": "3.3.2"
   },
