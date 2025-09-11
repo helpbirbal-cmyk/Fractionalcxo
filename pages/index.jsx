@@ -1,7 +1,9 @@
+// pages/index.jsx
 import React, { useState } from "react";
 import Head from "next/head";
 import Hero from "../components/hero";
 import ProblemCards from "../components/problem-cards";
+import CompetitiveAuditSection from "../components/competitive-audit-section";
 import ServicesSection from "../components/services-section";
 import AuditModal from "../components/audit-modal";
 
@@ -19,6 +21,8 @@ export default function Home() {
       {/* Pass the onOpenAudit function as a prop */}
       <Hero onOpenAudit={() => setIsAuditModalOpen(true)} />
       <ProblemCards />
+      {/* Add the new component here */}
+     <CompetitiveAuditSection onOpenAudit={() => setIsAuditModalOpen(true)} />
       <ServicesSection />
       <AuditModal
         isOpen={isAuditModalOpen}
