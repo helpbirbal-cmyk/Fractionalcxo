@@ -1,3 +1,4 @@
+// pages/_app.jsx
 import React from "react"
 import "../styles/globals.css"
 import Nav from "../components/nav"

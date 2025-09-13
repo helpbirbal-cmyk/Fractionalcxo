@@ -3,12 +3,7 @@ import { motion } from "framer-motion"
 import { ArrowRight, Play, Star, Users, TrendingUp, Sparkles, CheckCircle, Zap } from "lucide-react"
 import Link from 'next/link';
 
-export default function Hero({ onOpenGTM }) {
-  const handleGTMClick = () => {
-    console.log("GTM button clicked");
-    if (onOpenGTM) onOpenGTM();
-  };
-
+export default function Hero({ onOpenAudit, onOpenGTM }) {
   return (
       <section className="relative overflow-hidden pt-32 pb-24 bg-gradient-dark">
       {/* Premium Background Elements */}
@@ -50,26 +45,26 @@ export default function Hero({ onOpenGTM }) {
             <Zap className="h-5 w-5 text-primary" />
           </motion.div>
 
-                           <motion.h1
-                   initial={{ opacity: 0, y: 20 }}
-                   animate={{ opacity: 1, y: 0 }}
-                   transition={{ duration: 0.8, delay: 0.2 }}
-                   className="font-display text-5xl md:text-6xl lg:text-7xl mb-8"
-                 >
-                   <span className="text-gradient-hero">Unlock Hyper-Growth</span>
-                   <br />
-                   <span className="text-white">Without the Full-Time Overhead</span>
-                 </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="font-display text-5xl md:text-6xl lg:text-7xl mb-8"
+          >
+            <span className="text-gradient-hero">Unlock Hyper-Growth</span>
+            <br />
+            <span className="text-white">Without the Full-Time Overhead</span>
+          </motion.h1>
 
-                           <motion.p
-                   initial={{ opacity: 0, y: 20 }}
-                   animate={{ opacity: 1, y: 0 }}
-                   transition={{ duration: 0.8, delay: 0.3 }}
-                   className="font-body text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed"
-                 >
-                   Get instant access to world-class <span className="font-body-semibold text-white">CGOs, CMOs, CSOs & GTM leaders</span> who've scaled
-                   companies from $0 to $100M+. Fractional leadership that delivers measurable results in weeks, not years.
-                 </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="font-body text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+          >
+            Get instant access to world-class <span className="font-body-semibold text-white">CGOs, CMOs, CSOs & GTM leaders</span> who've scaled
+            companies from $0 to $100M+. Fractional leadership that delivers measurable results in weeks, not years.
+          </motion.p>
 
           {/* Premium Key Benefits */}
           <motion.div
@@ -96,21 +91,26 @@ export default function Hero({ onOpenGTM }) {
             </div>
           </motion.div>
 
-          {/* Premium CTA Buttons */}
+          {/* Premium CTA Buttons - FIXED */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20"
           >
+            <button className="btn-cta group" onClick={onOpenGTM}>
+              <div className="flex items-center">
+                Create GTM Plan
+                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+              </div>
+            </button>
 
-          <button
-            onClick={handleGTMClick}
-            className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center"
-          >
-            Free GTM Plan
-            <ArrowRight className="ml-3 h-6 w-6" />
-          </button>
+            <button className="btn-cta group" onClick={onOpenAudit}>
+              <div className="flex items-center">
+                Do a Growth Audit
+                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+              </div>
+            </button>
 
             <button className="btn-secondary group">
               <div className="flex items-center">
@@ -126,8 +126,6 @@ export default function Hero({ onOpenGTM }) {
               </div>
             </button>
           </motion.div>
-
-
 
           {/* Bottom Trust Bar */}
           <motion.div

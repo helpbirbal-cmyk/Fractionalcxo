@@ -1,14 +1,14 @@
-// pages/index.jsx (for Option 2)
+// pages/index.jsx
 import React, { useState } from "react";
 import Head from "next/head";
 import Hero from "../components/hero";
 import ProblemCards from "../components/problem-cards";
-import CompetitiveAuditSection from "../components/competitive-audit-section"; // <-- Keep this
+import CompetitiveAuditSection from "../components/competitive-audit-section";
 import ServicesSection from "../components/services-section";
-import AuditModal from "../components/audit-modal"; // <-- This is the UPDATED one with competitor field
+import GTMStrategyModal from "../components/gtm-strategy-modal";
 
 export default function Home() {
-  const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
+  const [isGTMModalOpen, setIsGTMModalOpen] = useState(false);
 
   return (
     <>
@@ -18,15 +18,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <Hero onOpenAudit={() => setIsAuditModalOpen(true)} />
+      <Hero
+       onOpenGTM={() => setIsGTMModalOpen(true)}
+      />
+
       <ProblemCards />
-      {/* This section explains the new key feature of the main audit
-      <CompetitiveAuditSection onOpenAudit={() => setIsAuditModalOpen(true)} /> */}
       <ServicesSection />
-      {/* This single modal now handles everything */}
-      <AuditModal
-        isOpen={isAuditModalOpen}
-        onClose={() => setIsAuditModalOpen(false)}
+
+      {/* Only GTM Modal */}
+      <GTMStrategyModal
+        isOpen={isGTMModalOpen}
+        onClose={() => setIsGTMModalOpen(false)}
       />
     </>
   );

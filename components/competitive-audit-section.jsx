@@ -57,12 +57,7 @@ const CompetitiveAuditSection = ({ onOpenAudit }) => {
             </ul>
 
             {/* Call to Action Button */}
-            <button
-              onClick={onOpenAudit}
-              className="w-full md:w-auto inline-flex items-center justify-center px-6 py-4 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 shadow-md transition-all duration-200"
-            >
-              Unlock Your Competitive Audit
-            </button>
+          
             <p className="mt-3 text-sm text-gray-500 text-center md:text-left">
               See exactly how you stack up and where your next win is hiding.
             </p>
