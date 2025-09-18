@@ -86,10 +86,10 @@ export default function ProblemCards() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-500/10 to-orange-500/10 px-6 py-3 rounded-2xl border border-red-200 mb-6">
               <Target className="h-5 w-5 text-red-600" />
-              <span className="font-body-semibold text-red-600">Growth Challenges</span>
+              <span className="font-body-semibold text-black">Growth Challenges</span>
             </div>
             <h2 className="font-display-medium  text-black text-5xl md:text-6xl lg:text-7xl mb-8">
-              What makes CXO's lose their sleep?
+              Why does CXOs lose their sleep?
             </h2>
             <p className="font-body text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
               These are the exact challenges that stall growth and drain resources.

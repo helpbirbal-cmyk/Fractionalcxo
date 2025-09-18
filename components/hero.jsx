@@ -84,24 +84,23 @@ export default function Hero({ onOpenGTM }) {
                    <Check className="text-primary h-5 w-5" />
                  </div>
                  <span className="text-card-foreground text-base leading-6 font-medium">
-                   Start OnDemand
-                 </span>
-               </div>
-
-               <div className="flex items-start gap-3">
-                 <div className="pt-0.5">
-                   <Check className="text-primary h-5 w-5" />
-                 </div>
-                 <span className="text-card-foreground text-base leading-6 font-medium">
-                   Outcome Focus
-                 </span>
-               </div>
-               <div className="flex items-start gap-3">
-                 <div className="pt-0.5">
-                   <Check className="text-primary h-5 w-5" />
-                 </div>
-                 <span className="text-card-foreground text-base leading-6 font-medium">
                    Proven Experts
+                 </span>
+               </div>
+               <div className="flex items-start gap-3">
+                 <div className="pt-0.5">
+                   <Check className="text-primary h-5 w-5" />
+                 </div>
+                 <span className="text-card-foreground text-base leading-6 font-medium">
+                   Hands-On
+                 </span>
+               </div>
+               <div className="flex items-start gap-3">
+                 <div className="pt-0.5">
+                   <Check className="text-primary h-5 w-5" />
+                 </div>
+                 <span className="text-card-foreground text-base leading-6 font-medium">
+                   Flexible
                  </span>
                </div>
              </div>
@@ -117,9 +116,9 @@ export default function Hero({ onOpenGTM }) {
 
           <button
             onClick={handleGTMClick}
-            className="ring-2 ring-red-600 bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center"
+            className="ring-1 ring-red-600 bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center"
           >
-            Generate GTM Plan
+            GTM Plan Builder
             <ArrowRight className="ml-3 h-6 w-6" />
           </button>
 

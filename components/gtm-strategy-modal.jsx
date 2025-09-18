@@ -140,12 +140,12 @@ const GTMStrategyModal = ({ isOpen, onClose }) => {
                 <div className="sm:flex sm:items-start">
                   <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
                     <Dialog.Title as="h3" className="text-2xl font-medium leading-6 text-gray-900">
-                      {showResults ? 'Your GTM Strategy Preview' : 'Generate Your GTM Strategy'}
+                      {showResults ? 'Your GTM Plan Preview' : 'GTM Plan Builder'}
                     </Dialog.Title>
 
                     {!showResults ? (
                       <p className="text-sm text-gray-500 mt-2">
-                        Answer 5 questions to get a customized go-to-market plan
+                        Generate GTM Plan & Get a Free Workshop
                       </p>
                     ) : (
                       <p className="text-sm text-gray-500 mt-2">

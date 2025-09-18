@@ -4,24 +4,6 @@ import AnimateIn from "./animate-in"
 import { TrendingUp, Target, Users, Globe, Rocket, CheckCircle, ArrowRight, Star, Zap, Award, Clock, DollarSign } from "lucide-react"
 
 const services = [
-
-  {
-    role: "GTM Management",
-    icon: Rocket,
-    points: ["Launch plans", "Channel selection", "Early adoption loops"],
-    description: "Launch products that gain immediate market traction and adoption.",
-    results: ["10x faster market penetration", "90% launch success rate", "Sustainable growth"],
-    startingPrice: "₹75,000/mo",
-    popular: false,
-    color: "from-orange-500/5 to-orange-600/5",
-    borderColor: "border-orange-200",
-    gradient: "from-orange-500/20 to-orange-600/20",
-    iconBg: "bg-gradient-to-br from-orange-500/10 to-orange-600/10",
-    iconColor: "text-orange-600",
-    timeframe: "2-4 months",
-    roi: "400% average",
-    clients: "20+ companies"
-  },
   {
     role: "Fractional CGO",
     icon: TrendingUp,
@@ -37,15 +19,66 @@ const services = [
     iconColor: "text-primary",
     timeframe: "6-12 months",
     roi: "300% average",
-    clients: "30+ companies"
+    clients: "150+ companies"
   },
   {
-    role: "Global Expansion",
+    role: "Fractional CMO",
+    icon: Target,
+    points: ["GTM & positioning", "Acquisition funnels", "ROI-driven media"],
+    description: "Build high-converting marketing systems that drive predictable growth.",
+    results: ["60% CAC reduction", "3x faster scaling", "Predictable pipeline"],
+    startingPrice: "₹65,000/mo",
+    popular: false,
+    color: "from-blue-500/5 to-blue-600/5",
+    borderColor: "border-blue-200",
+    gradient: "from-blue-500/20 to-blue-600/20",
+    iconBg: "bg-gradient-to-br from-blue-500/10 to-blue-600/10",
+    iconColor: "text-blue-600",
+    timeframe: "4-8 months",
+    roi: "250% average",
+    clients: "120+ companies"
+  },
+  {
+    role: "Fractional CSO",
+    icon: Users,
+    points: ["Sales process & playbooks", "Pipeline & forecasting", "Team coaching"],
+    description: "Create repeatable sales processes that close more deals faster.",
+    results: ["34% close rate improvement", "50% shorter sales cycles", "Team productivity 3x"],
+    startingPrice: "₹55,000/mo",
+    popular: false,
+    color: "from-purple-500/5 to-purple-600/5",
+    borderColor: "border-purple-200",
+    gradient: "from-purple-500/20 to-purple-600/20",
+    iconBg: "bg-gradient-to-br from-purple-500/10 to-purple-600/10",
+    iconColor: "text-purple-600",
+    timeframe: "3-6 months",
+    roi: "200% average",
+    clients: "100+ companies"
+  },
+  {
+    role: "GTM Specialists",
+    icon: Rocket,
+    points: ["Launch plans", "Channel selection", "Early adoption loops"],
+    description: "Launch products that gain immediate market traction and adoption.",
+    results: ["10x faster market penetration", "90% launch success rate", "Sustainable growth"],
+    startingPrice: "₹45,000/mo",
+    popular: false,
+    color: "from-orange-500/5 to-orange-600/5",
+    borderColor: "border-orange-200",
+    gradient: "from-orange-500/20 to-orange-600/20",
+    iconBg: "bg-gradient-to-br from-orange-500/10 to-orange-600/10",
+    iconColor: "text-orange-600",
+    timeframe: "2-4 months",
+    roi: "400% average",
+    clients: "80+ companies"
+  },
+  {
+    role: "International Expansion",
     icon: Globe,
     points: ["Entry strategy", "Localization & pricing", "Partners & distribution"],
     description: "Expand globally with confidence using proven market entry strategies.",
     results: ["3 markets in 12 months", "Profitable from day 1", "Local market dominance"],
-    startingPrice: "₹75,000/mo",
+    startingPrice: "₹85,000/mo",
     popular: false,
     color: "from-green-500/5 to-green-600/5",
     borderColor: "border-green-200",
@@ -54,7 +87,7 @@ const services = [
     iconColor: "text-green-600",
     timeframe: "8-18 months",
     roi: "500% average",
-    clients: "10+ companies"
+    clients: "60+ companies"
   },
 ]
 
@@ -78,7 +111,7 @@ export default function ServicesSection() {
           </div>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 gap-1 md:grid-cols-2 lg:grid-cols-3 mx-auto">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => {
             const IconComponent = s.icon
             return (
@@ -90,7 +123,7 @@ export default function ServicesSection() {
                         <IconComponent className={`h-8 w-8 ${s.iconColor}`} />
                       </div>
                       {s.popular && (
-                        <div className="flex items-center gap-2 bg-gradient-to-r from-primary/10 to-green-500/10 text-black text-sm px-4 py-2 rounded-full font-body-semibold border border-primary/20">
+                        <div className="flex items-center gap-2 bg-gradient-to-r from-primary/10 to-green-500/10 text-primary text-sm px-4 py-2 rounded-full font-body-semibold border border-primary/20">
                           <Star className="h-4 w-4 fill-primary" />
                           Most Popular
                         </div>
@@ -183,7 +216,7 @@ export default function ServicesSection() {
           })}
         </div>
 
-        { /* Bottom CTA Section
+        {/* Bottom CTA Section
         <AnimateIn delay={0.6}>
           <div className="text-center mt-20">
             <div className="card-premium p-12 max-w-4xl mx-auto">
@@ -228,7 +261,7 @@ export default function ServicesSection() {
               </div>
             </div>
           </div>
-        </AnimateIn>   */}
+        </AnimateIn>  */ }
       </div>
     </section>
   )
