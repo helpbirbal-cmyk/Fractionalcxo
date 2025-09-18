@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>ABECXO – Fractional Growth, Sales, Marketing & GTM</title>
+        <title>ABERCXO – Fractional Growth, Sales, Marketing & GTM</title>
         <meta name="description" content="Unlock hyper-growth with fractional CGO/CMO/CSO, GTM & international expansion. Get a data-driven audit with competitor benchmarking." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
