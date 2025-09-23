@@ -122,10 +122,10 @@ export default function ContactPage() {
               <Phone className="h-5 w-5 text-primary" />
               <span className="font-body-semibold text-primary">Get Started Today</span>
             </div>
-            <h1 className="font-display-medium text-5xl md:text-6xl lg:text-7xl mb-8">
-              Let's Transform Your Growth
-            </h1>
-            <p className="font-body text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+        <h1 className="font-display-medium text-3xl md:text-4xl lg:text-5xl mb-6">
+          Let's Transform Your Growth
+        </h1>
+            <p className="font-body text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
               Ready to unlock hyper-growth? Book your free consultation and get a personalized 
               roadmap to scale your business with world-class fractional leadership.
             </p>

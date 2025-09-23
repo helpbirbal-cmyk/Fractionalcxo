@@ -12,7 +12,7 @@ export default function Hero({ onOpenGTM }) {
   };
 
   return (
-      <section className="relative overflow-hidden pt-32 pb-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <section className="relative overflow-hidden pt-24 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Premium Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated Gradient Orbs */}
@@ -85,7 +85,7 @@ export default function Hero({ onOpenGTM }) {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="mb-12 inline-flex flex-col sm:flex-row items-center gap-3 bg-gradient-to-r from-primary/10 to-green-500/10 px-6 sm:px-8 py-4 rounded-2xl border border-primary/20 backdrop-blur-md shadow-lg shadow-primary/10"
+            className="mb-8 inline-flex flex-col sm:flex-row items-center gap-3 bg-gradient-to-r from-primary/10 to-green-500/10 px-6 sm:px-8 py-4 rounded-2xl border border-primary/20 backdrop-blur-md shadow-lg shadow-primary/10"
           >
             <div className="flex items-center gap-3">
               <motion.div
@@ -116,13 +116,13 @@ export default function Hero({ onOpenGTM }) {
                    initial={{ opacity: 0, y: 30 }}
                    animate={{ opacity: 1, y: 0 }}
                    transition={{ duration: 1, delay: 0.2 }}
-                   className="font-display text-6xl md:text-7xl lg:text-8xl mb-12 leading-tight"
+                   className="font-display text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight"
                  >
                    <motion.span 
                      initial={{ opacity: 0, x: -50 }}
                      animate={{ opacity: 1, x: 0 }}
                      transition={{ duration: 0.8, delay: 0.4 }}
-                     className="text-white block mb-4"
+                     className="text-white block mb-3"
                    >
                      Stop Circling the Same Orbit.
                    </motion.span>
@@ -139,7 +139,7 @@ export default function Hero({ onOpenGTM }) {
                    initial={{ opacity: 0, y: 20 }}
                    animate={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.8, delay: 0.8 }}
-                   className="font-body text-xl md:text-2xl text-slate-300 max-w-5xl mx-auto mb-16 leading-relaxed"
+                   className="font-body text-lg md:text-xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed"
                   >
                    Get 20+ years of major brand expansion experience without the full-time cost. We help growth-stage startups break through plateaus with <span className="font-body-semibold text-white bg-gradient-to-r from-primary/20 to-green-500/20 px-2 py-1 rounded-lg">CGMO, CSO, and Turnaround Specialist</span> services.
                  </motion.p>
@@ -184,13 +184,13 @@ export default function Hero({ onOpenGTM }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-24"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12"
           >
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleGTMClick}
-              className="group relative overflow-hidden bg-gradient-to-r from-primary via-green-500 to-emerald-500 text-white font-body-bold px-12 py-6 rounded-2xl text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-primary/30 focus:outline-none focus:ring-4 focus:ring-primary/20"
+              className="group relative overflow-hidden bg-gradient-to-r from-primary via-green-500 to-emerald-500 text-white font-body-bold px-8 py-4 rounded-2xl text-base transition-all duration-300 hover:shadow-2xl hover:shadow-primary/30 focus:outline-none focus:ring-4 focus:ring-primary/20"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/10 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
               <div className="relative flex items-center">
@@ -203,7 +203,7 @@ export default function Hero({ onOpenGTM }) {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleGTMClick}
-              className="group bg-white/10 backdrop-blur-md text-white font-body-semibold px-12 py-6 rounded-2xl border-2 border-white/20 transition-all duration-300 hover:border-primary/30 hover:text-primary hover:shadow-lg hover:bg-white/20 focus:outline-none focus:ring-4 focus:ring-primary/20"
+              className="group bg-white/10 backdrop-blur-md text-white font-body-semibold px-8 py-4 rounded-2xl border-2 border-white/20 transition-all duration-300 hover:border-primary/30 hover:text-primary hover:shadow-lg hover:bg-white/20 focus:outline-none focus:ring-4 focus:ring-primary/20"
             >
               <div className="flex items-center">
                 Get GTM Strategy

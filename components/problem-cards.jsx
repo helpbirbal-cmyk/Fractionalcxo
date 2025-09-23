@@ -89,10 +89,10 @@ export default function ProblemCards() {
               <Target className="h-5 w-5 text-red-600" />
               <span className="font-body-semibold text-black">Growth Challenges</span>
             </div>
-            <h2 className="font-display-medium  text-black text-5xl md:text-6xl lg:text-7xl mb-8">
-              Why Growth-Stage Startups Struggle
-            </h2>
-            <p className="font-body text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+        <h2 className="font-display-medium text-black text-3xl md:text-4xl lg:text-5xl mb-6">
+          Why Growth-Stage Startups Struggle
+        </h2>
+            <p className="font-body text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               These are the exact challenges that keep startups circling the same orbit.
               We've helped hundreds break through with 20+ years of major brand experience.
             </p>

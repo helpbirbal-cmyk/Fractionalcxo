@@ -85,10 +85,10 @@ export default function ServicesSection() {
               <Award className="h-5 w-5 text-primary" />
               <span className="font-body-semibold text-black">Leadership Services</span>
             </div>
-            <h2 className="font-display-medium text-black text-5xl md:text-6xl lg:text-7xl mb-8">
-              Fractional Leadership Services
-            </h2>
-            <p className="font-body text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+        <h2 className="font-display-medium text-black text-3xl md:text-4xl lg:text-5xl mb-6">
+          Fractional Leadership Services
+        </h2>
+            <p className="font-body text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Get 20+ years of major brand expansion experience without the full-time cost. 
               Our proven leaders help growth-stage startups break through plateaus with specialized expertise.
             </p>

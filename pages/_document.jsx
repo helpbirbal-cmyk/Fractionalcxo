@@ -33,7 +33,6 @@ export default function Document() {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         
         {/* Preload Critical Resources */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </Head>
       <body>
         <Main />

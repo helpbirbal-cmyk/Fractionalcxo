@@ -75,10 +75,10 @@ export default function PricingPage() {
               <Award className="h-5 w-5 text-primary" />
               <span className="font-body-semibold text-primary">Flexible Pricing Plans</span>
             </div>
-            <h1 className="font-display-medium text-5xl md:text-6xl lg:text-7xl mb-8">
-              Simple, Clear Pricing
-            </h1>
-            <p className="font-body text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+        <h1 className="font-display-medium text-3xl md:text-4xl lg:text-5xl mb-6">
+          Simple, Clear Pricing
+        </h1>
+            <p className="font-body text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
               Choose the engagement model that fits your needs. Both plans include 
               20+ years of major brand experience and start in 48 hours.
             </p>
