@@ -9,74 +9,49 @@ export default function PricingPage() {
   
   const plans = [
     {
-      name: "Starter",
-      description: "Perfect for early-stage companies looking to establish growth foundations",
+      name: "Growth Accelerator",
+      description: "Perfect for growth-stage startups looking to accelerate their trajectory",
       price: billingCycle === "monthly" ? "₹50,000" : "₹500,000",
       period: billingCycle === "monthly" ? "/mo" : "/year",
       savings: billingCycle === "yearly" ? "Save ₹100,000" : "",
       features: [
-        "~16 hours/month fractional leadership",
-        "1 dedicated fractional leader",
-        "Monthly strategy sessions",
+        "15 hours/month fractional leadership",
+        "Choose: CGMO, CSO, or GTM Strategy",
+        "Weekly strategy sessions",
         "Progress tracking & reporting",
         "Email & chat support",
-        "Resource library access"
+        "Start in 48 hours"
       ],
-      results: ["Establish growth foundations", "Define clear KPIs", "Build initial processes"],
-      popular: false,
+      results: ["Establish growth foundations", "Define clear KPIs", "Build scalable processes"],
+      popular: true,
       cta: "Start Growing",
-      color: "from-blue-500/5 to-blue-600/5",
-      borderColor: "border-blue-200",
-      icon: Target,
+      color: "from-primary/5 to-green-500/5",
+      borderColor: "border-primary/20",
+      icon: TrendingUp,
       timeframe: "3-6 months",
-      roi: "150% average"
+      roi: "300% average"
     },
     {
-      name: "Growth",
-      description: "Ideal for scaling companies ready to accelerate their growth trajectory",
+      name: "Turnaround Specialist",
+      description: "For companies needing immediate results and crisis management",
       price: billingCycle === "monthly" ? "₹100,000" : "₹1,000,000",
       period: billingCycle === "monthly" ? "/mo" : "/year",
       savings: billingCycle === "yearly" ? "Save ₹200,000" : "",
       features: [
-        "~32 hours/month fractional leadership",
-        "1-2 dedicated fractional leaders",
-        "Weekly planning & execution",
-        "Sales & GTM strategy build",
-        "Team coaching & training",
-        "Priority support & dashboards",
-        "Custom playbooks & frameworks"
-      ],
-      results: ["3x faster growth", "Optimized sales processes", "Scalable marketing systems"],
-      popular: true,
-      cta: "Accelerate Growth",
-      color: "from-primary/5 to-green-500/5",
-      borderColor: "border-primary/20",
-      icon: TrendingUp,
-      timeframe: "6-12 months",
-      roi: "300% average"
-    },
-    {
-      name: "Scale",
-      description: "For established companies ready to dominate their market",
-      price: billingCycle === "monthly" ? "₹200,000+" : "₹2,000,000+",
-      period: billingCycle === "monthly" ? "/mo" : "/year",
-      savings: billingCycle === "yearly" ? "Save ₹400,000+" : "",
-      features: [
-        "Multi-leader fractional pod",
-        "GTM + Sales + International expansion",
+        "30 hours/month intensive leadership",
+        "Crisis management & rapid growth",
         "Daily strategic guidance",
         "Priority support & dedicated account manager",
         "Custom dashboards & reporting",
-        "Exclusive frameworks & methodologies",
-        "Direct access to leadership network"
+        "Immediate intervention & results"
       ],
-      results: ["Market leadership", "International expansion", "Unicorn trajectory"],
+      results: ["6-month turnaround", "500% growth acceleration", "Crisis resolution"],
       popular: false,
-      cta: "Dominate Market",
-      color: "from-purple-500/5 to-purple-600/5",
-      borderColor: "border-purple-200",
+      cta: "Get Turnaround",
+      color: "from-red-500/5 to-red-600/5",
+      borderColor: "border-red-200",
       icon: Zap,
-      timeframe: "12-24 months",
+      timeframe: "3-6 months",
       roi: "500% average"
     },
   ]
@@ -101,11 +76,11 @@ export default function PricingPage() {
               <span className="font-body-semibold text-primary">Flexible Pricing Plans</span>
             </div>
             <h1 className="font-display-medium text-5xl md:text-6xl lg:text-7xl mb-8">
-              Choose Your Growth Path
+              Simple, Clear Pricing
             </h1>
             <p className="font-body text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Select the perfect plan for your company's growth stage. All plans include 
-              proven frameworks, guaranteed results, and world-class fractional leadership.
+              Choose the engagement model that fits your needs. Both plans include 
+              20+ years of major brand experience and start in 48 hours.
             </p>
 
             {/* Premium Billing Toggle */}
@@ -135,16 +110,17 @@ export default function PricingPage() {
           </motion.div>
 
           {/* Pricing Cards */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-20">
+          <div className="grid lg:grid-cols-2 gap-12 mb-20 max-w-6xl mx-auto">
             {plans.map((plan, i) => {
               const IconComponent = plan.icon
               return (
                 <motion.div
                   key={plan.name}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + i * 0.1 }}
                   className="relative"
+                  whileHover={{ y: -10, scale: 1.02 }}
                 >
                   {plan.popular && (
                     <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
@@ -157,8 +133,8 @@ export default function PricingPage() {
                     </div>
                   )}
                   
-                  <Card className={`card-premium group transition-all duration-500 hover:scale-105 ${
-                    plan.popular ? "ring-2 ring-primary/20" : ""
+                  <Card className={`card-premium group transition-all duration-500 ${
+                    plan.popular ? "ring-2 ring-primary/20 shadow-2xl shadow-primary/10" : "shadow-xl"
                   }`}>
                     <CardHeader className="text-center pb-8">
                       <div className="flex items-center justify-center mb-6">
@@ -221,14 +197,18 @@ export default function PricingPage() {
                       </div>
 
                       {/* CTA */}
-                      <button className={`w-full py-5 rounded-2xl font-body-semibold transition-all duration-300 flex items-center justify-center gap-3 ${
-                        plan.popular 
-                          ? "btn-cta" 
-                          : "btn-primary"
-                      }`}>
+                      <motion.button 
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`w-full py-5 rounded-2xl font-body-semibold transition-all duration-300 flex items-center justify-center gap-3 ${
+                          plan.popular 
+                            ? "btn-cta" 
+                            : "btn-primary"
+                        }`}
+                      >
                         {plan.cta}
                         <ArrowRight className="h-5 w-5" />
-                      </button>
+                      </motion.button>
                     </CardContent>
                   </Card>
                 </motion.div>

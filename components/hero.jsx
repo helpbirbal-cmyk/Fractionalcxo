@@ -12,29 +12,69 @@ export default function Hero({ onOpenGTM }) {
   };
 
   return (
-      <section className="relative overflow-hidden pt-32 pb-24 bg-gradient-dark">
+      <section className="relative overflow-hidden pt-32 pb-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Premium Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-primary/10 to-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-green-500/10 to-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-primary/5 to-blue-500/5 rounded-full blur-3xl animate-pulse" />
+        {/* Animated Gradient Orbs */}
+        <motion.div
+          animate={{ 
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ 
+            x: [0, -80, 0],
+            y: [0, 60, 0],
+            scale: [1, 0.9, 1]
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-green-500/20 to-primary/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ 
+            x: [0, 50, 0],
+            y: [0, -30, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/10 to-blue-500/10 rounded-full blur-3xl"
+        />
 
-        {/* Floating Elements */}
+        {/* Premium Floating Elements */}
         <motion.div
-          animate={{ y: [-10, 10, -10] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-20 left-10 w-4 h-4 bg-primary/20 rounded-full"
-        />
-        <motion.div
-          animate={{ y: [10, -10, 10] }}
+          animate={{ 
+            y: [-20, 20, -20],
+            rotate: [0, 180, 360],
+            scale: [1, 1.2, 1]
+          }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-40 right-20 w-6 h-6 bg-green-500/20 rounded-full"
+          className="absolute top-20 left-10 w-6 h-6 bg-gradient-to-br from-primary/30 to-green-500/30 rounded-full shadow-lg shadow-primary/20"
         />
         <motion.div
-          animate={{ y: [-15, 15, -15] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-20 left-1/4 w-3 h-3 bg-blue-500/20 rounded-full"
+          animate={{ 
+            y: [20, -20, 20],
+            rotate: [360, 180, 0],
+            scale: [1, 0.8, 1]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-40 right-20 w-8 h-8 bg-gradient-to-br from-green-500/30 to-blue-500/30 rounded-full shadow-lg shadow-green-500/20"
         />
+        <motion.div
+          animate={{ 
+            y: [-25, 25, -25],
+            x: [0, 10, 0],
+            scale: [1, 1.3, 1]
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-20 left-1/4 w-4 h-4 bg-gradient-to-br from-blue-500/30 to-primary/30 rounded-full shadow-lg shadow-blue-500/20"
+        />
+
+        {/* Premium Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(23,177,111,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(23,177,111,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6">
@@ -42,33 +82,66 @@ export default function Hero({ onOpenGTM }) {
         {/* Main Hero Content */}
         <div className="text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="mb-8 inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-green-500/10 px-8 py-2 rounded-2xl border border-primary/20 backdrop-blur-sm"
+            className="mb-12 inline-flex flex-col sm:flex-row items-center gap-3 bg-gradient-to-r from-primary/10 to-green-500/10 px-6 sm:px-8 py-4 rounded-2xl border border-primary/20 backdrop-blur-md shadow-lg shadow-primary/10"
           >
-            <Sparkles className="h-5 w-5 text-primary" />
-            <span className="font-body-semibold text-primary">Trusted by 50+ Growth Startups</span>
-            <Zap className="h-5 w-5 text-primary" />
+            <div className="flex items-center gap-3">
+              <motion.div
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              >
+                <Sparkles className="h-5 w-5 text-primary" />
+              </motion.div>
+              <span className="font-body-semibold text-primary text-base sm:text-lg">Trusted by 50+ Growth Startups</span>
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Zap className="h-5 w-5 text-primary" />
+              </motion.div>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="flex -space-x-2">
+                {[1,2,3,4,5].map((i) => (
+                  <div key={i} className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-primary/20 to-green-500/20 border-2 border-white/20 flex items-center justify-center">
+                    <span className="text-xs font-body-bold text-primary">+</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
-                <motion.h1
-                   initial={{ opacity: 0, y: 20 }}
+                 <motion.h1
+                   initial={{ opacity: 0, y: 30 }}
                    animate={{ opacity: 1, y: 0 }}
-                   transition={{ duration: 0.8, delay: 0.2 }}
-                   className="font-display text-5xl md:text-6xl lg:text-7xl mb-8"
+                   transition={{ duration: 1, delay: 0.2 }}
+                   className="font-display text-6xl md:text-7xl lg:text-8xl mb-12 leading-tight"
                  >
-                   <span className="text-gradient-hero">Unlock Hyper-Growth</span>
-                   <br />
-                   <span className="text-white">Without the Full-Time Overhead</span>
+                   <motion.span 
+                     initial={{ opacity: 0, x: -50 }}
+                     animate={{ opacity: 1, x: 0 }}
+                     transition={{ duration: 0.8, delay: 0.4 }}
+                     className="text-white block mb-4"
+                   >
+                     Stop Circling the Same Orbit.
+                   </motion.span>
+                   <motion.span 
+                     initial={{ opacity: 0, x: 50 }}
+                     animate={{ opacity: 1, x: 0 }}
+                     transition={{ duration: 0.8, delay: 0.6 }}
+                     className="text-gradient-hero block"
+                   >
+                     Change Trajectory with Fractional Leadership
+                   </motion.span>
                  </motion.h1>
                  <motion.p
                    initial={{ opacity: 0, y: 20 }}
                    animate={{ opacity: 1, y: 0 }}
-                   transition={{ duration: 0.8, delay: 0.3 }}
-                   className="font-body text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+                   transition={{ duration: 0.8, delay: 0.8 }}
+                   className="font-body text-xl md:text-2xl text-slate-300 max-w-5xl mx-auto mb-16 leading-relaxed"
                   >
-                   Get instant access to world-class <span className="font-body-semibold text-white">CGOs, CMOs, CSOs & GTM Experts</span> who've scaled
-                   companies from $0 to $100M+. Fractional leadership that delivers measurable results in weeks, not years.
+                   Get 20+ years of major brand expansion experience without the full-time cost. We help growth-stage startups break through plateaus with <span className="font-body-semibold text-white bg-gradient-to-r from-primary/20 to-green-500/20 px-2 py-1 rounded-lg">CGMO, CSO, and Turnaround Specialist</span> services.
                  </motion.p>
 
           <motion.div
@@ -108,42 +181,65 @@ export default function Hero({ onOpenGTM }) {
 
           {/* Premium CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20"
+            transition={{ duration: 0.8, delay: 1.0 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-24"
           >
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handleGTMClick}
+              className="group relative overflow-hidden bg-gradient-to-r from-primary via-green-500 to-emerald-500 text-white font-body-bold px-12 py-6 rounded-2xl text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-primary/30 focus:outline-none focus:ring-4 focus:ring-primary/20"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/10 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+              <div className="relative flex items-center">
+                Book Free Consultation
+                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+              </div>
+            </motion.button>
 
-          <button
-            onClick={handleGTMClick}
-            className="ring-1 ring-red-600 bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center"
-          >
-            GTM Plan Builder
-            <ArrowRight className="ml-3 h-6 w-6" />
-          </button>
-
-
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handleGTMClick}
+              className="group bg-white/10 backdrop-blur-md text-white font-body-semibold px-12 py-6 rounded-2xl border-2 border-white/20 transition-all duration-300 hover:border-primary/30 hover:text-primary hover:shadow-lg hover:bg-white/20 focus:outline-none focus:ring-4 focus:ring-primary/20"
+            >
+              <div className="flex items-center">
+                Get GTM Strategy
+                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </motion.button>
           </motion.div>
 
-          {/* Bottom Trust Bar */}
+          {/* Premium Trust Bar */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-16 flex items-center justify-center gap-8 text-slate-500 text-sm"
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="flex flex-wrap items-center justify-center gap-8 text-slate-400 text-sm"
           >
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span>30-day money-back guarantee</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span>NDA protected</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span>24/7 support</span>
-            </div>
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-3 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/10 hover:border-primary/20 transition-all duration-300"
+            >
+              <CheckCircle className="h-5 w-5 text-primary" />
+              <span className="font-body-medium">30-day money-back guarantee</span>
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-3 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/10 hover:border-primary/20 transition-all duration-300"
+            >
+              <CheckCircle className="h-5 w-5 text-primary" />
+              <span className="font-body-medium">NDA protected</span>
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-3 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/10 hover:border-primary/20 transition-all duration-300"
+            >
+              <CheckCircle className="h-5 w-5 text-primary" />
+              <span className="font-body-medium">Start in 48 hours</span>
+            </motion.div>
           </motion.div>
         </div>
       </div>

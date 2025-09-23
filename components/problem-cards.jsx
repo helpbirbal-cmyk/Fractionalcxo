@@ -1,78 +1,79 @@
 import React from "react"
+import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import AnimateIn from "./animate-in"
 import { TrendingDown, DollarSign, Target, Globe, ArrowRight, Star, Users, Clock, CheckCircle } from "lucide-react"
 
 const problems = [
   {
-    title: "Sales Plateau",
-    description: "Pipeline stalls, long cycles, low close rates.",
+    title: "Stuck in Growth Plateau",
+    description: "Revenue flatlining despite efforts, team struggling to scale.",
     icon: TrendingDown,
-    percentage: "75%",
-    statText: "of companies struggle with sales growth",
-    testimonial: "We increased our close rate from 12% to 34% in 6 months.",
-    author: "Sarah Chen, VP Sales at TechFlow",
+    percentage: "78%",
+    statText: "of startups hit growth plateaus",
+    testimonial: "We broke through our plateau and achieved 300% growth in 6 months.",
+    author: "Sarah Chen, CEO at TechFlow",
     color: "from-red-500/10 to-red-600/10",
     borderColor: "border-red-200",
     iconBg: "bg-red-100",
     iconColor: "text-red-600",
     metrics: {
-      avgLoss: "$2.1M",
+      avgLoss: "₹2.1M",
       timeToSolve: "3-6 months",
       successRate: "89%"
     }
   },
   {
-    title: "Marketing Waste",
-    description: "Poor ROAS, unclear messaging, weak GTM focus.",
+    title: "Can't Afford Full-Time CXO",
+    description: "Need expertise but can't justify full-time executive costs.",
     icon: DollarSign,
-    percentage: "89%",
-    statText: "of marketing spend is wasted",
-    testimonial: "Our CAC dropped by 60% while scaling 3x faster.",
-    author: "Mike Rodriguez, CMO at GrowthCo",
+    percentage: "85%",
+    statText: "of startups can't afford full-time CXOs",
+    testimonial: "We got world-class leadership at 1/3 the cost of full-time.",
+    author: "Mike Rodriguez, Founder at GrowthCo",
     color: "from-orange-500/10 to-orange-600/10",
     borderColor: "border-orange-200",
     iconBg: "bg-orange-100",
     iconColor: "text-orange-600",
     metrics: {
-      avgLoss: "$1.8M",
-      timeToSolve: "4-8 months",
-      successRate: "92%"
+      avgLoss: "₹1.8M",
+      timeToSolve: "48 hours",
+      successRate: "95%"
     }
   },
   {
-    title: "Launch Stumbles",
-    description: "Positioning misses; slow adoption post-launch.",
+    title: "Sales Team Struggling",
+    description: "Pipeline issues, low close rates, team not scaling.",
     icon: Target,
-    percentage: "95%",
-    statText: "of new products miss the mark ",
-    testimonial: "We achieved 10x faster market penetration.",
-    author: "Lisa Park, Product Lead at InnovateCorp",
+    percentage: "72%",
+    statText: "of sales teams underperform",
+    testimonial: "Our close rate increased from 12% to 34% in 6 months.",
+    author: "Lisa Park, VP Sales at InnovateCorp",
     color: "from-blue-500/10 to-blue-600/10",
     borderColor: "border-blue-200",
     iconBg: "bg-blue-100",
     iconColor: "text-blue-600",
     metrics: {
-      avgLoss: "$3.2M",
-      timeToSolve: "2-4 months",
-      successRate: "94%"
+      avgLoss: "₹3.2M",
+      timeToSolve: "3-6 months",
+      successRate: "92%"
     }
   },
   {
-    title: "Global Entry Risk",
-    description: "Pricing, channels, partners—too many unknowns.",
+    title: "Need Turnaround Fast",
+    description: "Crisis mode, need immediate results and rapid growth.",
     icon: Globe,
-    percentage: "82%",
-    statText: "of international expansions fail",
-    testimonial: "We entered 3 new markets profitably in 12 months.",
-    author: "David Kim, International Director at ScaleUp",
+    percentage: "65%",
+    statText: "of companies need turnaround help",
+    testimonial: "We went from crisis to 500% growth in 6 months.",
+    author: "David Kim, CEO at ScaleUp",
     color: "from-green-500/10 to-green-600/10",
     borderColor: "border-green-200",
     iconBg: "bg-green-100",
     iconColor: "text-green-600",
     metrics: {
-      avgLoss: "$4.5M",
-      timeToSolve: "8-18 months",
+      avgLoss: "₹4.5M",
+      timeToSolve: "3-6 months",
       successRate: "87%"
     }
   },
@@ -89,11 +90,11 @@ export default function ProblemCards() {
               <span className="font-body-semibold text-black">Growth Challenges</span>
             </div>
             <h2 className="font-display-medium  text-black text-5xl md:text-6xl lg:text-7xl mb-8">
-              Why does CXOs lose their sleep?
+              Why Growth-Stage Startups Struggle
             </h2>
             <p className="font-body text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              These are the exact challenges that stall growth and drain resources.
-              We've solved them for hundreds of companies with proven frameworks.
+              These are the exact challenges that keep startups circling the same orbit.
+              We've helped hundreds break through with 20+ years of major brand experience.
             </p>
           </div>
         </AnimateIn>
@@ -103,8 +104,12 @@ export default function ProblemCards() {
             const IconComponent = problem.icon
             return (
               <AnimateIn key={problem.title} delay={i * 0.1}>
-                <div className="group">
-                  <Card className={`card-premium group transition-all duration-500 hover:scale-105 bg-gradient-to-br ${problem.color} ${problem.borderColor} hover-lift premium-shadow group-hover:border-primary/30`}>
+                <motion.div 
+                  className="group"
+                  whileHover={{ y: -15, scale: 1.03 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                  <Card className={`card-premium group transition-all duration-500 bg-gradient-to-br ${problem.color} ${problem.borderColor} hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10`}>
                     <CardHeader className="pb-6">
                       <div className="flex items-center justify-between mb-6">
                         <div className={`p-4 rounded-2xl ${problem.iconBg} border border-slate-200`}>
@@ -124,15 +129,19 @@ export default function ProblemCards() {
 
 
                       {/* CTA */}
-                      <button className="w-full btn-primary group">
+                      <motion.button 
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full btn-primary group"
+                      >
                         <div className="flex items-center justify-center">
                           Learn More
                           <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform" />
                         </div>
-                      </button>
+                      </motion.button>
                     </CardContent>
                   </Card>
-                </div>
+                </motion.div>
               </AnimateIn>
             )
           })}

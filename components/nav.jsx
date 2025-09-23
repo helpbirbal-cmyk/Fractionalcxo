@@ -9,12 +9,9 @@ import Image from 'next/image';
 const links = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/solutions", label: "Solutions" },
   { href: "/how-it-works", label: "How it Works" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
-  { href: "/case-studies", label: "Case Studies" },
-  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ]
 
@@ -32,54 +29,65 @@ export default function Nav() {
   }, [])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled
-        ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200"
-        : "bg-white/80 backdrop-blur-sm"
+        ? "bg-white/95 backdrop-blur-xl shadow-2xl border-b border-slate-200/50"
+        : "bg-white/80 backdrop-blur-md"
     }`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
 
-        <Link href="/" className="flex items-center space-x-2 group">
-
-          <div className="w-12 h-12 bg-gradient-to-br from-primary to-green-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">
-              <Image src="/aberdeenlogo.svg"  className="rounded-md" alt="ABERCXO logo" width={50} height={50} />
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
+        >
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="w-12 h-12 bg-gradient-to-br from-primary to-green-500 rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-primary/30 transition-all duration-300">
+              <span className="text-white font-bold text-lg">
+                <Image src="/aberdeenlogo.svg" className="rounded-md" alt="ABERCXO logo" width={50} height={50} />
+              </span>
+            </div>
+            <span className="font-display-medium text-xl text-slate-900 group-hover:text-primary transition-colors">
+              ABERCXO
             </span>
-          </div>
-          <span className="font-bold text-xl text-slate-900 group-hover:text-primary transition-colors">
-            ABERCXO
-          </span>
-
-        </Link>
+          </Link>
+        </motion.div>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-8">
           {links.map((link) => (
-            <Link
+            <motion.div
               key={link.href}
-              href={link.href}
-              className={`relative text-sm font-medium transition-all duration-200 group ${
-                router.pathname === link.href
-                  ? "text-primary"
-                  : "text-slate-600 hover:text-slate-900"
-              }`}>
-
-              {link.label}
-              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full ${
-                router.pathname === link.href ? "w-full" : ""
-              }`} />
-
-            </Link>
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Link
+                href={link.href}
+                className={`relative text-sm font-body-semibold transition-all duration-300 group ${
+                  router.pathname === link.href
+                    ? "text-primary"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}>
+                {link.label}
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-green-500 transition-all duration-300 group-hover:w-full ${
+                  router.pathname === link.href ? "w-full" : ""
+                }`} />
+              </Link>
+            </motion.div>
           ))}
         </nav>
 
         {/* CTA Button */}
         <div className="hidden lg:flex items-center space-x-4">
-          <Link href="/contact"
-            className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5">
-              Book Session
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link href="/contact"
+              className="bg-gradient-to-r from-primary to-green-500 hover:from-primary/90 hover:to-green-500/90 text-white px-8 py-3 rounded-xl font-body-semibold transition-all duration-300 hover:shadow-xl hover:shadow-primary/30">
+                Book Free Call
+            </Link>
+          </motion.div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -125,7 +133,7 @@ export default function Nav() {
                   className="block w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Book Session
+                  Book Free Call
                 </Link>
               </div>
 

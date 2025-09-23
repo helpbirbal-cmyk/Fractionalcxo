@@ -56,17 +56,12 @@ export default function ContactPage() {
     {
       title: "Basic Information",
       description: "Tell us about yourself and your company",
-      fields: ["name", "email", "company", "role"]
+      fields: ["name", "email", "company", "role", "companySize"]
     },
     {
-      title: "Growth Challenges",
-      description: "What specific challenges are you facing?",
-      fields: ["companySize", "challenge", "timeline"]
-    },
-    {
-      title: "Project Details",
-      description: "Help us understand your goals and timeline",
-      fields: ["budget", "phone", "message"]
+      title: "Growth Challenges & Goals",
+      description: "What specific challenges are you facing and what's your timeline?",
+      fields: ["challenge", "timeline", "budget", "phone", "message"]
     }
   ]
 
@@ -167,7 +162,7 @@ export default function ContactPage() {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="card-premium p-8"
+                className="card-premium p-10 shadow-2xl"
               >
                 {/* Progress Bar */}
                 <div className="mb-8">
@@ -254,18 +249,7 @@ export default function ContactPage() {
                             <option value="Other">Other</option>
                           </select>
                         </div>
-                      </motion.div>
-                    )}
-
-                    {step === 2 && (
-                      <motion.div
-                        key="step2"
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        className="space-y-6"
-                      >
-                        <div>
+                        <div className="md:col-span-2">
                           <label className="font-body-semibold text-slate-900 mb-2 block">Company Size *</label>
                           <select
                             name="companySize"
@@ -282,6 +266,17 @@ export default function ContactPage() {
                             <option value="1000+">1000+ employees</option>
                           </select>
                         </div>
+                      </motion.div>
+                    )}
+
+                    {step === 2 && (
+                      <motion.div
+                        key="step2"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        className="space-y-6"
+                      >
                         <div>
                           <label className="font-body-semibold text-slate-900 mb-2 block">Primary Challenge *</label>
                           <select
@@ -292,11 +287,12 @@ export default function ContactPage() {
                             required
                           >
                             <option value="">Select your main challenge</option>
-                            <option value="Sales Growth">Sales growth plateau</option>
+                            <option value="Growth Plateau">Stuck in growth plateau</option>
+                            <option value="Sales Team Struggling">Sales team struggling</option>
+                            <option value="Need Turnaround">Need turnaround fast</option>
+                            <option value="Can't Afford Full-Time CXO">Can't afford full-time CXO</option>
                             <option value="Marketing ROI">Poor marketing ROI</option>
                             <option value="Product Launch">Product launch struggles</option>
-                            <option value="International Expansion">International expansion</option>
-                            <option value="Team Scaling">Team scaling issues</option>
                             <option value="Other">Other</option>
                           </select>
                         </div>
@@ -316,17 +312,6 @@ export default function ContactPage() {
                             <option value="6+ months">6+ months</option>
                           </select>
                         </div>
-                      </motion.div>
-                    )}
-
-                    {step === 3 && (
-                      <motion.div
-                        key="step3"
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        className="space-y-6"
-                      >
                         <div>
                           <label className="font-body-semibold text-slate-900 mb-2 block">Budget Range *</label>
                           <select
@@ -337,10 +322,8 @@ export default function ContactPage() {
                             required
                           >
                             <option value="">Select budget range</option>
-                            <option value="₹25,000-50,000">₹25,000 - ₹50,000/month</option>
-                            <option value="₹50,000-100,000">₹50,000 - ₹100,000/month</option>
-                            <option value="₹100,000-200,000">₹100,000 - ₹200,000/month</option>
-                            <option value="₹200,000+">₹200,000+/month</option>
+                            <option value="₹50,000/month">₹50,000/month (Growth Accelerator)</option>
+                            <option value="₹100,000/month">₹100,000/month (Turnaround Specialist)</option>
                             <option value="Custom">Custom budget</option>
                           </select>
                         </div>
@@ -382,23 +365,27 @@ export default function ContactPage() {
                         Previous
                       </button>
                     )}
-                    {step < 3 ? (
-                      <button
+                    {step < 2 ? (
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
                         type="button"
                         onClick={nextStep}
                         className="btn-primary group ml-auto"
                       >
                         Next Step
                         <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                      </button>
+                      </motion.button>
                     ) : (
-                      <button
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
                         type="submit"
                         className="btn-cta group ml-auto"
                       >
                         Book Free Consultation
                         <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
-                      </button>
+                      </motion.button>
                     )}
                   </div>
                 </form>

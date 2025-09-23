@@ -1,34 +1,17 @@
 import React from "react"
+import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import AnimateIn from "./animate-in"
 import { TrendingUp, Target, Users, Globe, Rocket, CheckCircle, ArrowRight, Star, Zap, Award, Clock, DollarSign } from "lucide-react"
 
 const services = [
-
   {
-    role: "GTM Management",
-    icon: Rocket,
-    points: ["Launch plans", "Channel selection", "Early adoption loops"],
-    description: "Launch products that gain immediate market traction and adoption.",
-    results: ["10x faster market penetration", "90% launch success rate", "Sustainable growth"],
-    startingPrice: "₹48,700/mo",
-    popular: false,
-    color: "from-orange-500/5 to-orange-600/5",
-    borderColor: "border-orange-200",
-    gradient: "from-orange-500/20 to-orange-600/20",
-    iconBg: "bg-gradient-to-br from-orange-500/10 to-orange-600/10",
-    iconColor: "text-orange-600",
-    timeframe: "2-4 months",
-    roi: "400% average",
-    clients: "20+ companies"
-  },
-  {
-    role: "Fractional CGO",
+    role: "Fractional CGMO",
     icon: TrendingUp,
-    points: ["Growth roadmap & metrics", "Cross-functional alignment", "Revenue acceleration"],
-    description: "Transform your growth strategy with proven frameworks that scale.",
+    points: ["Growth strategy & execution", "Marketing leadership", "Revenue acceleration"],
+    description: "Transform your growth trajectory with integrated marketing and growth leadership.",
     results: ["300% avg. revenue growth", "6-month implementation", "Full team alignment"],
-    startingPrice: "₹88,700/mo",
+    startingPrice: "₹50,000/mo",
     popular: true,
     color: "from-primary/5 to-green-500/5",
     borderColor: "border-primary/20",
@@ -40,21 +23,55 @@ const services = [
     clients: "30+ companies"
   },
   {
-    role: "Global Expansion",
+    role: "Fractional CSO",
+    icon: Target,
+    points: ["Sales team building", "Pipeline optimization", "Revenue scaling"],
+    description: "Build and scale high-performing sales teams with proven methodologies.",
+    results: ["2x sales team productivity", "40% higher close rates", "Scalable processes"],
+    startingPrice: "₹50,000/mo",
+    popular: false,
+    color: "from-blue-500/5 to-blue-600/5",
+    borderColor: "border-blue-200",
+    gradient: "from-blue-500/20 to-blue-600/20",
+    iconBg: "bg-gradient-to-br from-blue-500/10 to-blue-600/10",
+    iconColor: "text-blue-600",
+    timeframe: "3-6 months",
+    roi: "250% average",
+    clients: "25+ companies"
+  },
+  {
+    role: "Turnaround Specialist",
+    icon: Rocket,
+    points: ["Crisis management", "Rapid growth strategies", "Process optimization"],
+    description: "Get immediate results with crisis-tested turnaround strategies and rapid growth execution.",
+    results: ["6-month turnaround", "500% growth acceleration", "Crisis resolution"],
+    startingPrice: "₹100,000/mo",
+    popular: false,
+    color: "from-red-500/5 to-red-600/5",
+    borderColor: "border-red-200",
+    gradient: "from-red-500/20 to-red-600/20",
+    iconBg: "bg-gradient-to-br from-red-500/10 to-red-600/10",
+    iconColor: "text-red-600",
+    timeframe: "3-6 months",
+    roi: "500% average",
+    clients: "15+ companies"
+  },
+  {
+    role: "GTM Strategy",
     icon: Globe,
-    points: ["Entry strategy", "Localization & pricing", "Partners & distribution"],
-    description: "Expand globally with confidence using proven market entry strategies.",
-    results: ["3 markets in 12 months", "Profitable from day 1", "Local market dominance"],
-    startingPrice: "₹68,700/mo",
+    points: ["Launch strategies", "Market entry", "Channel optimization"],
+    description: "Launch and scale with confidence using proven go-to-market strategies.",
+    results: ["10x faster market penetration", "90% launch success rate", "Sustainable growth"],
+    startingPrice: "₹50,000/mo",
     popular: false,
     color: "from-green-500/5 to-green-600/5",
     borderColor: "border-green-200",
     gradient: "from-green-500/20 to-green-600/20",
     iconBg: "bg-gradient-to-br from-green-500/10 to-green-600/10",
     iconColor: "text-green-600",
-    timeframe: "8-18 months",
-    roi: "500% average",
-    clients: "10+ companies"
+    timeframe: "2-4 months",
+    roi: "400% average",
+    clients: "20+ companies"
   },
 ]
 
@@ -69,21 +86,25 @@ export default function ServicesSection() {
               <span className="font-body-semibold text-black">Leadership Services</span>
             </div>
             <h2 className="font-display-medium text-black text-5xl md:text-6xl lg:text-7xl mb-8">
-              Fractional Leadership
+              Fractional Leadership Services
             </h2>
             <p className="font-body text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Get world-class executive leadership on-demand. Our proven leaders have scaled
-              companies from startup to unicorn status with measurable results.
+              Get 20+ years of major brand expansion experience without the full-time cost. 
+              Our proven leaders help growth-stage startups break through plateaus with specialized expertise.
             </p>
           </div>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 gap-1 md:grid-cols-2 lg:grid-cols-3 mx-auto">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 mx-auto">
           {services.map((s, i) => {
             const IconComponent = s.icon
             return (
               <AnimateIn key={s.role} delay={i * 0.1}>
-                <Card className={`card-premium group transition-all duration-500 hover:scale-105`}>
+                <motion.div
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  <Card className={`card-premium group transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10`}>
                   <CardHeader className="pb-6">
                     <div className="flex items-center justify-between mb-6">
                       <div className={`p-4 rounded-2xl ${s.iconBg} border border-slate-200`}>
@@ -162,22 +183,31 @@ export default function ServicesSection() {
                         </div>
                       </div>
 
-                      <button className="w-full btn-primary group">
+                      <motion.button 
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full btn-primary group"
+                      >
                         <div className="flex items-center justify-center">
                           Get Started
                           <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform" />
                         </div>
-                      </button>
+                      </motion.button>
 
-                      <button className="w-full btn-tertiary group">
+                      <motion.button 
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full btn-tertiary group"
+                      >
                         <div className="flex items-center justify-center">
                           View Cases
                           <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </div>
-                      </button>
+                      </motion.button>
                     </div>
                   </CardContent>
                 </Card>
+                </motion.div>
               </AnimateIn>
             )
           })}

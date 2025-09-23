@@ -63,46 +63,54 @@ body {
 }
 
        /* Premium Typography System */
+       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+       
        .font-display {
-         font-family: 'Inter', sans-serif;
-         font-weight: 800;
-         letter-spacing: -0.02em;
-         line-height: 1.1;
+         font-family: 'Inter', system-ui, -apple-system, sans-serif;
+         font-weight: 900;
+         letter-spacing: -0.03em;
+         line-height: 1.05;
+         font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
        }
 
        .font-display-medium {
-         font-family: 'Inter', sans-serif;
-         font-weight: 700;
-         letter-spacing: -0.01em;
-         line-height: 1.2;
+         font-family: 'Inter', system-ui, -apple-system, sans-serif;
+         font-weight: 800;
+         letter-spacing: -0.02em;
+         line-height: 1.1;
+         font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
        }
 
        .font-body {
-         font-family: 'Inter', sans-serif;
+         font-family: 'Inter', system-ui, -apple-system, sans-serif;
          font-weight: 400;
          letter-spacing: -0.01em;
-         line-height: 1.6;
+         line-height: 1.7;
+         font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
        }
 
        .font-body-medium {
-         font-family: 'Inter', sans-serif;
+         font-family: 'Inter', system-ui, -apple-system, sans-serif;
          font-weight: 500;
          letter-spacing: -0.01em;
-         line-height: 1.5;
+         line-height: 1.6;
+         font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
        }
 
        .font-body-semibold {
-         font-family: 'Inter', sans-serif;
+         font-family: 'Inter', system-ui, -apple-system, sans-serif;
          font-weight: 600;
          letter-spacing: -0.01em;
-         line-height: 1.4;
+         line-height: 1.5;
+         font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
        }
 
        .font-body-bold {
-         font-family: 'Inter', sans-serif;
+         font-family: 'Inter', system-ui, -apple-system, sans-serif;
          font-weight: 700;
          letter-spacing: -0.02em;
-         line-height: 1.3;
+         line-height: 1.4;
+         font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
        }
 
 /* Premium Animations */
@@ -138,12 +146,14 @@ body {
 
 /* Premium Button System */
 .btn-primary {
-  @apply relative overflow-hidden bg-gradient-to-r from-primary via-green-500 to-emerald-500 text-white font-body-semibold px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/25 focus:outline-none focus:ring-4 focus:ring-primary/20;
+  @apply relative overflow-hidden bg-gradient-to-r from-primary via-green-500 to-emerald-500 text-white font-body-semibold px-10 py-5 rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/30 focus:outline-none focus:ring-4 focus:ring-primary/20;
   background-size: 200% 100%;
+  box-shadow: 0 10px 30px rgba(23, 177, 111, 0.2);
 }
 
 .btn-primary:hover {
   background-position: right center;
+  box-shadow: 0 20px 40px rgba(23, 177, 111, 0.4);
 }
 
 .btn-primary::before {
@@ -154,14 +164,14 @@ body {
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
+  transition: width 0.8s, height 0.8s;
 }
 
 .btn-primary:active::before {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 }
 
 .btn-secondary {
@@ -173,21 +183,33 @@ body {
 }
 
 .btn-cta {
-  @apply bg-gradient-to-r from-primary to-green-500 text-white font-body-bold px-10 py-5 rounded-2xl text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/30 focus:outline-none focus:ring-4 focus:ring-primary/20;
+  @apply bg-gradient-to-r from-primary to-green-500 text-white font-body-bold px-12 py-6 rounded-2xl text-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/40 focus:outline-none focus:ring-4 focus:ring-primary/20;
   background-size: 200% 100%;
+  box-shadow: 0 15px 35px rgba(23, 177, 111, 0.3);
 }
 
 .btn-cta:hover {
   background-position: right center;
+  box-shadow: 0 25px 50px rgba(23, 177, 111, 0.5);
 }
 
-/* Card Styles */
+/* Premium Card Styles */
 .card-premium {
-  @apply bg-white rounded-3xl border border-slate-200 shadow-lg transition-all duration-300 hover:shadow-2xl hover:border-primary/20;
+  @apply bg-white rounded-3xl border border-slate-200 shadow-xl transition-all duration-500 hover:shadow-2xl hover:border-primary/20 hover:-translate-y-2;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-premium:hover {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
 .card-gradient {
-  @apply bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl border border-slate-200 shadow-lg transition-all duration-300 hover:shadow-2xl hover:border-primary/20;
+  @apply bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl border border-slate-200 shadow-xl transition-all duration-500 hover:shadow-2xl hover:border-primary/20 hover:-translate-y-2;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-gradient:hover {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
 /* Loading States */
@@ -274,14 +296,54 @@ html {
          background-clip: text;
        }
 
-/* Responsive Typography */
+/* Premium Responsive Typography */
 @media (max-width: 768px) {
   .font-display {
     font-size: clamp(2.5rem, 8vw, 4rem);
+    line-height: 1.1;
   }
 
   .font-display-medium {
     font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.2;
+  }
+
+  .font-body {
+    font-size: clamp(1rem, 4vw, 1.125rem);
+    line-height: 1.6;
+  }
+
+  /* Mobile-specific button adjustments */
+  .btn-cta {
+    @apply px-8 py-4 text-base;
+  }
+
+  .btn-primary {
+    @apply px-6 py-4 text-base;
+  }
+
+  /* Mobile card adjustments */
+  .card-premium {
+    @apply rounded-2xl p-6;
+  }
+}
+
+@media (max-width: 480px) {
+  .font-display {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .font-display-medium {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+
+  /* Extra small mobile adjustments */
+  .btn-cta {
+    @apply px-6 py-3 text-sm;
+  }
+
+  .btn-primary {
+    @apply px-4 py-3 text-sm;
   }
 }
 
