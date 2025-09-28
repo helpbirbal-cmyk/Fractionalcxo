@@ -1,14 +1,23 @@
-import React from "react"
+import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight, Play, Star, Users, TrendingUp, Sparkles, CheckCircle, Zap } from "lucide-react"
 import Link from 'next/link';
 import { Check } from "lucide-react";
+import LeadGenerationModal from "./lead-generation-modal";
 
 
 export default function Hero({ onOpenGTM }) {
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
+  const [leadMagnet, setLeadMagnet] = useState("consultation");
+
   const handleGTMClick = () => {
     console.log("GTM button clicked");
     if (onOpenGTM) onOpenGTM();
+  };
+
+  const handleLeadClick = (magnet) => {
+    setLeadMagnet(magnet);
+    setIsLeadModalOpen(true);
   };
 
   return (
@@ -189,12 +198,12 @@ export default function Hero({ onOpenGTM }) {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              onClick={handleGTMClick}
+              onClick={() => handleLeadClick("consultation")}
               className="group relative overflow-hidden bg-gradient-to-r from-primary via-green-500 to-emerald-500 text-white font-body-bold px-8 py-4 rounded-2xl text-base transition-all duration-300 hover:shadow-2xl hover:shadow-primary/30 focus:outline-none focus:ring-4 focus:ring-primary/20"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/10 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
               <div className="relative flex items-center">
-                Book Free Consultation
+                Get Free Growth Strategy Session
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
               </div>
             </motion.button>
@@ -202,11 +211,11 @@ export default function Hero({ onOpenGTM }) {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              onClick={handleGTMClick}
+              onClick={() => handleLeadClick("audit")}
               className="group bg-white/10 backdrop-blur-md text-white font-body-semibold px-8 py-4 rounded-2xl border-2 border-white/20 transition-all duration-300 hover:border-primary/30 hover:text-primary hover:shadow-lg hover:bg-white/20 focus:outline-none focus:ring-4 focus:ring-primary/20"
             >
               <div className="flex items-center">
-                Get GTM Strategy
+                Get Free Growth Audit
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
               </div>
             </motion.button>
@@ -243,6 +252,13 @@ export default function Hero({ onOpenGTM }) {
           </motion.div>
         </div>
       </div>
+
+      {/* Lead Generation Modal */}
+      <LeadGenerationModal
+        isOpen={isLeadModalOpen}
+        onClose={() => setIsLeadModalOpen(false)}
+        leadMagnet={leadMagnet}
+      />
     </section>
   )
 }

@@ -85,7 +85,7 @@ export default function Nav() {
           >
             <Link href="/contact"
               className="bg-gradient-to-r from-primary to-green-500 hover:from-primary/90 hover:to-green-500/90 text-white px-8 py-3 rounded-xl font-body-semibold transition-all duration-300 hover:shadow-xl hover:shadow-primary/30">
-                Book Free Call
+                Get Free Strategy Session
             </Link>
           </motion.div>
         </div>
