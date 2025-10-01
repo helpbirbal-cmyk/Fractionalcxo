@@ -10,11 +10,7 @@ const LeadGenerationModal = ({ isOpen, onClose, leadMagnet = "consultation" }) =
     email: '',
     phone: '',
     company: '',
-    role: '',
-    companySize: '',
     currentChallenge: '',
-    timeline: '',
-    budget: '',
     additionalInfo: ''
   });
 
@@ -77,7 +73,7 @@ const LeadGenerationModal = ({ isOpen, onClose, leadMagnet = "consultation" }) =
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      setStep(4); // Success step
+      setStep(3); // Success step
     } catch (error) {
       console.error('Submission error:', error);
     } finally {
@@ -164,14 +160,14 @@ const LeadGenerationModal = ({ isOpen, onClose, leadMagnet = "consultation" }) =
           {/* Progress Bar */}
           <div className="px-8 py-4 border-b border-slate-200">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-body-semibold text-slate-700">Step {step} of 3</span>
-              <span className="text-sm text-slate-500">{Math.round((step/3)*100)}% Complete</span>
+              <span className="text-sm font-body-semibold text-slate-700">Step {step} of 2</span>
+              <span className="text-sm text-slate-500">{Math.round((step/2)*100)}% Complete</span>
             </div>
             <div className="w-full bg-slate-200 rounded-full h-2">
               <motion.div
                 className="bg-gradient-to-r from-primary to-green-500 h-2 rounded-full"
                 initial={{ width: 0 }}
-                animate={{ width: `${(step/3)*100}%` }}
+                animate={{ width: `${(step/2)*100}%` }}
                 transition={{ duration: 0.3 }}
               />
             </div>
@@ -245,36 +241,6 @@ const LeadGenerationModal = ({ isOpen, onClose, leadMagnet = "consultation" }) =
                       />
                     </div>
                   </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="font-body-semibold text-slate-900 mb-2 block">Your Role *</label>
-                      <input
-                        type="text"
-                        name="role"
-                        value={formData.role}
-                        onChange={handleInputChange}
-                        className="form-input-premium"
-                        placeholder="CEO, Founder, etc."
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="font-body-semibold text-slate-900 mb-2 block">Company Size *</label>
-                      <select
-                        name="companySize"
-                        value={formData.companySize}
-                        onChange={handleInputChange}
-                        className="form-input-premium"
-                        required
-                      >
-                        <option value="">Select company size</option>
-                        {companySizes.map((size) => (
-                          <option key={size} value={size}>{size}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
                 </motion.div>
               )}
 
@@ -287,12 +253,12 @@ const LeadGenerationModal = ({ isOpen, onClose, leadMagnet = "consultation" }) =
                   className="space-y-6"
                 >
                   <div>
-                    <h3 className="font-display-medium text-xl text-slate-900 mb-2">Growth Challenges</h3>
-                    <p className="font-body text-slate-600 mb-6">Help us understand your current situation</p>
+                    <h3 className="font-display-medium text-xl text-slate-900 mb-2">Your Growth Challenge</h3>
+                    <p className="font-body text-slate-600 mb-6">Help us understand your biggest growth challenge</p>
                   </div>
 
                   <div>
-                    <label className="font-body-semibold text-slate-900 mb-2 block">Primary Challenge *</label>
+                    <label className="font-body-semibold text-slate-900 mb-2 block">What's your biggest growth challenge? *</label>
                     <select
                       name="currentChallenge"
                       value={formData.currentChallenge}
@@ -308,94 +274,21 @@ const LeadGenerationModal = ({ isOpen, onClose, leadMagnet = "consultation" }) =
                   </div>
 
                   <div>
-                    <label className="font-body-semibold text-slate-900 mb-2 block">Timeline *</label>
-                    <select
-                      name="timeline"
-                      value={formData.timeline}
-                      onChange={handleInputChange}
-                      className="form-input-premium"
-                      required
-                    >
-                      <option value="">When do you need results?</option>
-                      {timelines.map((timeline) => (
-                        <option key={timeline} value={timeline}>{timeline}</option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="font-body-semibold text-slate-900 mb-2 block">Budget Range *</label>
-                    <select
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleInputChange}
-                      className="form-input-premium"
-                      required
-                    >
-                      <option value="">Select your budget range</option>
-                      {budgets.map((budget) => (
-                        <option key={budget} value={budget}>{budget}</option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="font-body-semibold text-slate-900 mb-2 block">Additional Information</label>
+                    <label className="font-body-semibold text-slate-900 mb-2 block">Tell us more about your situation</label>
                     <textarea
                       name="additionalInfo"
                       value={formData.additionalInfo}
                       onChange={handleInputChange}
                       rows="4"
                       className="form-input-premium"
-                      placeholder="Tell us more about your current situation, goals, or any specific challenges you're facing..."
+                      placeholder="What specific results are you looking for? What's your current revenue? Any specific goals or challenges you'd like to discuss?"
                     />
                   </div>
                 </motion.div>
               )}
 
+
               {step === 3 && (
-                <motion.div
-                  key="step3"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  className="space-y-6"
-                >
-                  <div>
-                    <h3 className="font-display-medium text-xl text-slate-900 mb-2">What Happens Next?</h3>
-                    <p className="font-body text-slate-600 mb-6">Here's what you can expect after submitting</p>
-                  </div>
-
-                  <div className="space-y-4">
-                    {currentMagnet.benefits.map((benefit, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="font-body text-slate-700">{benefit}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-6 border border-slate-200">
-                    <h4 className="font-body-semibold text-slate-900 mb-3">Next Steps:</h4>
-                    <div className="space-y-2 text-sm text-slate-700">
-                      <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-primary" />
-                        <span>We'll review your information within 2 hours</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Mail className="h-4 w-4 text-primary" />
-                        <span>You'll receive a confirmation email with next steps</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Calendar className="h-4 w-4 text-primary" />
-                        <span>We'll schedule your {currentMagnet.title.toLowerCase()} within 24 hours</span>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-
-              {step === 4 && (
                 <motion.div
                   key="step4"
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -442,7 +335,7 @@ const LeadGenerationModal = ({ isOpen, onClose, leadMagnet = "consultation" }) =
                   </button>
                 )}
                 
-                {step < 3 ? (
+                {step < 2 ? (
                   <button
                     type="button"
                     onClick={nextStep}
@@ -473,7 +366,7 @@ const LeadGenerationModal = ({ isOpen, onClose, leadMagnet = "consultation" }) =
               </div>
             )}
 
-            {step === 4 && (
+            {step === 3 && (
               <div className="flex justify-center pt-6 border-t border-slate-200 mt-8">
                 <button
                   onClick={onClose}

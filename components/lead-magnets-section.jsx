@@ -29,56 +29,22 @@ const LeadMagnetsSection = () => {
     {
       id: 'consultation',
       icon: Calendar,
-      title: 'Free Growth Strategy Session',
-      subtitle: '30-minute personalized consultation',
+      title: 'Free ₹50,000 Growth Strategy Session',
+      subtitle: '30-minute personalized consultation with our fractional leadership experts',
       value: '₹50,000 value',
-      description: 'Get a personalized roadmap to accelerate your growth with our fractional leadership experts.',
+      description: 'Get a personalized roadmap to accelerate your growth and break through plateaus. This session alone has helped companies identify ₹2Cr+ in growth opportunities.',
       benefits: [
-        'Personalized growth roadmap',
-        'Identify biggest opportunities',
-        'Clear next steps to scale',
-        'No obligation consultation'
+        'Personalized growth roadmap worth ₹50,000',
+        'Identify your biggest growth opportunities',
+        'Clear next steps to achieve 300% revenue growth',
+        'No obligation - just pure value',
+        'Get started in 48 hours'
       ],
-      cta: 'Book Free Session',
+      cta: 'Book Free ₹50,000 Session',
       color: 'from-primary/10 to-green-500/10',
       borderColor: 'border-primary/20',
-      iconColor: 'text-primary'
-    },
-    {
-      id: 'audit',
-      icon: BarChart3,
-      title: 'Free Growth Audit',
-      subtitle: 'Comprehensive business analysis',
-      value: '₹25,000 value',
-      description: 'Get a complete assessment of your current growth strategy and identify opportunities.',
-      benefits: [
-        'Complete growth assessment',
-        'Competitor analysis',
-        'Market opportunity mapping',
-        'Actionable recommendations'
-      ],
-      cta: 'Get Free Audit',
-      color: 'from-blue-500/10 to-blue-600/10',
-      borderColor: 'border-blue-200',
-      iconColor: 'text-blue-600'
-    },
-    {
-      id: 'gtm',
-      icon: Download,
-      title: 'GTM Strategy Blueprint',
-      subtitle: 'Proven go-to-market framework',
-      value: '₹15,000 value',
-      description: 'Download our battle-tested GTM framework used by 100+ successful startups.',
-      benefits: [
-        'Proven GTM framework',
-        'Channel prioritization matrix',
-        'Launch timeline template',
-        'Success metrics dashboard'
-      ],
-      cta: 'Download Blueprint',
-      color: 'from-purple-500/10 to-purple-600/10',
-      borderColor: 'border-purple-200',
-      iconColor: 'text-purple-600'
+      iconColor: 'text-primary',
+      popular: true
     }
   ];
 
@@ -103,15 +69,16 @@ const LeadMagnetsSection = () => {
             <span className="font-body-semibold text-primary">Free Resources</span>
           </div>
           <h2 className="font-display-medium text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-6">
-            Get Started with These Free Resources
+            Get Your Free ₹50,000 Growth Strategy Session
           </h2>
           <p className="font-body text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Choose the resource that best fits your current needs. All resources are completely free and designed to give you immediate value.
+            This single session has helped 500+ companies identify ₹2Cr+ in growth opportunities. 
+            Get your personalized roadmap to break through plateaus and achieve 300% revenue growth.
           </p>
         </motion.div>
 
-        {/* Lead Magnets Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        {/* Main Lead Magnet */}
+        <div className="max-w-4xl mx-auto mb-16">
           {leadMagnets.map((magnet, index) => {
             const IconComponent = magnet.icon;
             return (
@@ -123,53 +90,64 @@ const LeadMagnetsSection = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 className="group"
               >
-                <div className={`card-premium bg-gradient-to-br ${magnet.color} ${magnet.borderColor} hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500`}>
-                  <div className="p-8">
+                <div className={`card-premium bg-gradient-to-br ${magnet.color} ${magnet.borderColor} hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 relative overflow-hidden`}>
+                  {magnet.popular && (
+                    <div className="absolute top-6 right-6">
+                      <div className="bg-gradient-to-r from-primary to-green-500 text-white text-sm px-4 py-2 rounded-full font-body-semibold shadow-lg">
+                        <div className="flex items-center gap-2">
+                          <Star className="h-4 w-4 fill-white" />
+                          Most Popular
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="p-12">
                     {/* Header */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className={`p-4 rounded-2xl bg-white/50 border border-slate-200`}>
-                        <IconComponent className={`h-8 w-8 ${magnet.iconColor}`} />
+                    <div className="flex items-center justify-between mb-8">
+                      <div className={`p-6 rounded-3xl bg-white/50 border border-slate-200`}>
+                        <IconComponent className={`h-12 w-12 ${magnet.iconColor}`} />
                       </div>
                       <div className="text-right">
-                        <div className="bg-green-100 text-green-700 text-xs font-body-semibold px-3 py-1 rounded-full">
+                        <div className="bg-green-100 text-green-700 text-lg font-body-bold px-6 py-3 rounded-full">
                           {magnet.value}
                         </div>
                       </div>
                     </div>
 
                     {/* Content */}
-                    <div className="mb-6">
-                      <h3 className="font-display-medium text-xl text-slate-900 mb-2">
+                    <div className="mb-8">
+                      <h3 className="font-display-medium text-3xl text-slate-900 mb-4">
                         {magnet.title}
                       </h3>
-                      <p className="font-body-semibold text-slate-600 text-sm mb-3">
+                      <p className="font-body-semibold text-slate-600 text-xl mb-6">
                         {magnet.subtitle}
                       </p>
-                      <p className="font-body text-slate-700 leading-relaxed">
+                      <p className="font-body text-slate-700 leading-relaxed text-lg">
                         {magnet.description}
                       </p>
                     </div>
 
                     {/* Benefits */}
-                    <div className="space-y-3 mb-8">
+                    <div className="grid md:grid-cols-2 gap-4 mb-10">
                       {magnet.benefits.map((benefit, idx) => (
-                        <div key={idx} className="flex items-center gap-3">
-                          <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                          <span className="font-body text-slate-700 text-sm">{benefit}</span>
+                        <div key={idx} className="flex items-start gap-4">
+                          <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="font-body text-slate-700">{benefit}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* CTA */}
                     <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       onClick={() => handleMagnetClick(magnet.id)}
-                      className="w-full btn-primary group"
+                      className="w-full btn-cta group text-lg py-6"
                     >
                       <div className="flex items-center justify-center">
                         {magnet.cta}
-                        <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
                       </div>
                     </motion.button>
                   </div>

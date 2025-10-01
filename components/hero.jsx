@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
-import { ArrowRight, Play, Star, Users, TrendingUp, Sparkles, CheckCircle, Zap } from "lucide-react"
+import { ArrowRight, Play, Star, Users, TrendingUp, Sparkles, CheckCircle, Zap, Clock } from "lucide-react"
 import Link from 'next/link';
 import { Check } from "lucide-react";
 import LeadGenerationModal from "./lead-generation-modal";
@@ -133,7 +133,7 @@ export default function Hero({ onOpenGTM }) {
                      transition={{ duration: 0.8, delay: 0.4 }}
                      className="text-white block mb-3"
                    >
-                     Stop Circling the Same Orbit.
+                     Stop Losing ₹50L+ Monthly to
                    </motion.span>
                    <motion.span 
                      initial={{ opacity: 0, x: 50 }}
@@ -141,17 +141,44 @@ export default function Hero({ onOpenGTM }) {
                      transition={{ duration: 0.8, delay: 0.6 }}
                      className="text-gradient-hero block"
                    >
-                     Change Trajectory with Fractional Leadership
+                     Growth Plateaus & Poor Leadership
                    </motion.span>
                  </motion.h1>
                  <motion.p
                    initial={{ opacity: 0, y: 20 }}
                    animate={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.8, delay: 0.8 }}
-                   className="font-body text-lg md:text-xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+                   className="font-body text-lg md:text-xl text-slate-300 max-w-4xl mx-auto mb-8 leading-relaxed"
                   >
-                   Get 20+ years of major brand expansion experience without the full-time cost. We help growth-stage startups break through plateaus with <span className="font-body-semibold text-white bg-gradient-to-r from-primary/20 to-green-500/20 px-2 py-1 rounded-lg">CGMO, CSO, and Turnaround Specialist</span> services.
+                   Get <span className="font-body-bold text-white">20+ years of major brand expansion experience</span> at 1/3 the cost of full-time CXOs. We help growth-stage startups break through plateaus and achieve <span className="font-body-bold text-primary">300% revenue growth</span> in 6 months.
                  </motion.p>
+
+                 {/* Social Proof Bar */}
+                 <motion.div
+                   initial={{ opacity: 0, y: 20 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.8, delay: 1.0 }}
+                   className="flex flex-wrap justify-center items-center gap-8 mb-12 text-slate-300"
+                 >
+                   <div className="flex items-center gap-2">
+                     <div className="flex -space-x-2">
+                       {[1,2,3,4,5].map((i) => (
+                         <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/20 to-green-500/20 border-2 border-white/20 flex items-center justify-center">
+                           <span className="text-xs font-body-bold text-primary">+</span>
+                         </div>
+                       ))}
+                     </div>
+                     <span className="font-body-semibold">500+ companies trust us</span>
+                   </div>
+                   <div className="flex items-center gap-2">
+                     <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                     <span className="font-body-semibold">4.9/5 rating</span>
+                   </div>
+                   <div className="flex items-center gap-2">
+                     <TrendingUp className="h-5 w-5 text-green-400" />
+                     <span className="font-body-semibold">300% avg. growth</span>
+                   </div>
+                 </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -192,18 +219,18 @@ export default function Hero({ onOpenGTM }) {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12"
           >
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleLeadClick("consultation")}
-              className="group relative overflow-hidden bg-gradient-to-r from-primary via-green-500 to-emerald-500 text-white font-body-bold px-8 py-4 rounded-2xl text-base transition-all duration-300 hover:shadow-2xl hover:shadow-primary/30 focus:outline-none focus:ring-4 focus:ring-primary/20"
+              className="group relative overflow-hidden bg-gradient-to-r from-primary via-green-500 to-emerald-500 text-white font-body-bold px-10 py-5 rounded-2xl text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-primary/30 focus:outline-none focus:ring-4 focus:ring-primary/20"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/10 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
               <div className="relative flex items-center">
-                Get Free Growth Strategy Session
+                Get Free ₹50,000 Strategy Session
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
               </div>
             </motion.button>
@@ -215,10 +242,26 @@ export default function Hero({ onOpenGTM }) {
               className="group bg-white/10 backdrop-blur-md text-white font-body-semibold px-8 py-4 rounded-2xl border-2 border-white/20 transition-all duration-300 hover:border-primary/30 hover:text-primary hover:shadow-lg hover:bg-white/20 focus:outline-none focus:ring-4 focus:ring-primary/20"
             >
               <div className="flex items-center">
-                Get Free Growth Audit
+                Download Growth Blueprint
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
               </div>
             </motion.button>
+          </motion.div>
+
+          {/* Urgency Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.4 }}
+            className="bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-200/30 rounded-2xl p-6 mb-12 max-w-2xl mx-auto"
+          >
+            <div className="flex items-center justify-center gap-3 text-red-600">
+              <Clock className="h-5 w-5" />
+              <span className="font-body-semibold">Limited Time: Only 5 spots left this month</span>
+            </div>
+            <p className="text-center text-slate-400 text-sm mt-2">
+              Join 47 companies who've already booked their free strategy sessions
+            </p>
           </motion.div>
 
           {/* Premium Trust Bar */}

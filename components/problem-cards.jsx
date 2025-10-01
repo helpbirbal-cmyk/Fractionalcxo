@@ -6,74 +6,74 @@ import { TrendingDown, DollarSign, Target, Globe, ArrowRight, Star, Users, Clock
 
 const problems = [
   {
-    title: "Stuck in Growth Plateau",
-    description: "Revenue flatlining despite efforts, team struggling to scale.",
+    title: "Losing ₹50L+ Monthly to Growth Plateaus",
+    description: "Revenue stuck at ₹2-5Cr for months despite hiring more people and trying new strategies. Team is frustrated, investors are asking questions, and you're burning cash faster than you're growing.",
     icon: TrendingDown,
-    percentage: "78%",
-    statText: "of startups hit growth plateaus",
-    testimonial: "We broke through our plateau and achieved 300% growth in 6 months.",
+    percentage: "₹50L+",
+    statText: "monthly revenue lost to plateaus",
+    testimonial: "We were stuck at ₹3Cr for 18 months. ABERCXO helped us break through to ₹12Cr in 8 months.",
     author: "Sarah Chen, CEO at TechFlow",
     color: "from-red-500/10 to-red-600/10",
     borderColor: "border-red-200",
     iconBg: "bg-red-100",
     iconColor: "text-red-600",
     metrics: {
-      avgLoss: "₹2.1M",
+      avgLoss: "₹50L/month",
       timeToSolve: "3-6 months",
       successRate: "89%"
     }
   },
   {
-    title: "Can't Afford Full-Time CXO",
-    description: "Need expertise but can't justify full-time executive costs.",
+    title: "Can't Afford ₹2Cr+ for Full-Time CXO",
+    description: "You need world-class leadership but can't justify ₹2-3Cr+ annual cost for a full-time CXO. You're stuck between hiring junior people who can't scale or paying premium prices you can't afford.",
     icon: DollarSign,
-    percentage: "85%",
-    statText: "of startups can't afford full-time CXOs",
-    testimonial: "We got world-class leadership at 1/3 the cost of full-time.",
+    percentage: "₹2Cr+",
+    statText: "annual cost of full-time CXO",
+    testimonial: "We got world-class leadership at 1/3 the cost. Saved ₹1.5Cr annually while getting better results.",
     author: "Mike Rodriguez, Founder at GrowthCo",
     color: "from-orange-500/10 to-orange-600/10",
     borderColor: "border-orange-200",
     iconBg: "bg-orange-100",
     iconColor: "text-orange-600",
     metrics: {
-      avgLoss: "₹1.8M",
+      avgLoss: "₹1.5Cr/year",
       timeToSolve: "48 hours",
       successRate: "95%"
     }
   },
   {
-    title: "Sales Team Struggling",
-    description: "Pipeline issues, low close rates, team not scaling.",
+    title: "Sales Team Converting Only 15-20%",
+    description: "Your sales team is working hard but only closing 15-20% of deals. Pipeline looks good but revenue isn't following. You're losing deals to competitors and can't figure out why.",
     icon: Target,
-    percentage: "72%",
-    statText: "of sales teams underperform",
-    testimonial: "Our close rate increased from 12% to 34% in 6 months.",
+    percentage: "15-20%",
+    statText: "average close rate for struggling teams",
+    testimonial: "Our close rate went from 18% to 42% in 6 months. Pipeline value increased 3x.",
     author: "Lisa Park, VP Sales at InnovateCorp",
     color: "from-blue-500/10 to-blue-600/10",
     borderColor: "border-blue-200",
     iconBg: "bg-blue-100",
     iconColor: "text-blue-600",
     metrics: {
-      avgLoss: "₹3.2M",
+      avgLoss: "₹2.5Cr/year",
       timeToSolve: "3-6 months",
       successRate: "92%"
     }
   },
   {
-    title: "Need Turnaround Fast",
-    description: "Crisis mode, need immediate results and rapid growth.",
+    title: "Crisis Mode: Need Results in 90 Days",
+    description: "Investors are concerned, cash runway is shrinking, and you need immediate results. You can't wait 6-12 months for a turnaround. You need someone who can hit the ground running and deliver fast.",
     icon: Globe,
-    percentage: "65%",
-    statText: "of companies need turnaround help",
-    testimonial: "We went from crisis to 500% growth in 6 months.",
+    percentage: "90 days",
+    statText: "typical crisis timeline",
+    testimonial: "We were in crisis mode. ABERCXO helped us turn around in 90 days and achieve 500% growth in 6 months.",
     author: "David Kim, CEO at ScaleUp",
     color: "from-green-500/10 to-green-600/10",
     borderColor: "border-green-200",
     iconBg: "bg-green-100",
     iconColor: "text-green-600",
     metrics: {
-      avgLoss: "₹4.5M",
-      timeToSolve: "3-6 months",
+      avgLoss: "₹1Cr/month",
+      timeToSolve: "90 days",
       successRate: "87%"
     }
   },
@@ -90,11 +90,11 @@ export default function ProblemCards() {
               <span className="font-body-semibold text-black">Growth Challenges</span>
             </div>
         <h2 className="font-display-medium text-black text-3xl md:text-4xl lg:text-5xl mb-6">
-          Why Growth-Stage Startups Struggle
+          Are You Losing ₹50L+ Monthly to These Problems?
         </h2>
             <p className="font-body text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              These are the exact challenges that keep startups circling the same orbit.
-              We've helped hundreds break through with 20+ years of major brand experience.
+              These are the exact challenges costing growth-stage startups ₹50L+ every month.
+              We've helped 500+ companies break through with 20+ years of major brand experience.
             </p>
           </div>
         </AnimateIn>

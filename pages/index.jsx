@@ -5,6 +5,8 @@ import Hero from "../components/hero";
 import ProblemCards from "../components/problem-cards";
 import CompetitiveAuditSection from "../components/competitive-audit-section";
 import ServicesSection from "../components/services-section";
+import TestimonialsSection from "../components/testimonials-section";
+import FAQSection from "../components/faq-section";
 import LeadMagnetsSection from "../components/lead-magnets-section";
 import GTMStrategyModal from "../components/gtm-strategy-modal";
 
@@ -25,6 +27,8 @@ export default function Home() {
 
       <ProblemCards />
       <ServicesSection />
+      <TestimonialsSection />
+      <FAQSection />
       <LeadMagnetsSection />
 
       {/* Only GTM Modal */}
